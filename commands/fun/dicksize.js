@@ -33,6 +33,7 @@ module.exports = {
 
     let Member =
       message.mentions.users.first() ||
+      message.guild.members.cache.get(args[0]) ||
       message.member;
 
     let Result = sizes[Math.floor(Math.random() * sizes.length)];
@@ -40,7 +41,7 @@ module.exports = {
     let embed = new MessageEmbed()
       .setColor(Color)
       .setTitle(`Pp v2 Machine`)
-      .setDescription(`${Member.username} pp Size Is\n${Result}`)
+      .setDescription(`${Member.user.username} pp Size Is\n${Result}`)
       .setFooter(`Requested by ${message.author.username}`)
       .setTimestamp();
 
