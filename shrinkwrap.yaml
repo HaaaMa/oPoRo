@@ -2,6 +2,7 @@ dependencies:
   discord.js: 12.3.1
   express: 4.17.1
   fs: 0.0.2
+  node-fetch: 2.6.1
 packages:
   /@discordjs/collection/0.1.6:
     dev: false
@@ -509,3 +510,4 @@ specifiers:
   discord.js: ^12.3.1
   express: ^4.17.1
   fs: ^0.0.2
+  node-fetch: ^2.6.1

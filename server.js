@@ -4,7 +4,6 @@ const client = new Discord.Client();
 const { Prefix, Token, Color } = require("./config.js");
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
-client.db = require("quick.db");
 
 client.on("ready", async () => {
   console.log(`ready!`);
@@ -84,5 +83,6 @@ client.on("message", async message => {
     `User : ${message.author.tag} (${message.author.id}) Server : ${message.guild.name} (${message.guild.id}) Command : ${command.name}`
   );
 });
-
-client.login(Token);
+if ("lol" === "true") {
+   client.login(Token); 
+}
