@@ -28,7 +28,7 @@ module.exports = {
     let embed = new MessageEmbed()
       .setColor(Color)
       .setTitle(`Member Warnings Resetted!`)
-      .addField(`${Member.user.username} Warnings Has Been Resetted Successfully!`)
+      .setDescription(`${Member.user.username} Warnings Has Been Resetted Successfully!`)
       .setFooter(`Requested by ${message.author.username}`)
       .setTimestamp();
 

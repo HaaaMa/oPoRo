@@ -13,7 +13,7 @@ module.exports = {
     
     let embed = new MessageEmbed()
     .setColor(Color)
-    .setTitle(`${client.user.displayName} Commands!`)
+    .setTitle(`${client.user.username} Commands!`)
     .setDescription(`Use ${Prefix}Help <Command Name> For More Command Information!` + 
     "\n\n**Fun**\n`Avatar, Coinflip, Howgay, Meme, Rate, 8ball, Dicksize, Ascii, Choose, Hack, Randomnumber`" + "\n\n" + "**Moderation**\n`Clear, Mute, Unmute, Tempmute, Kick, Ban, Unban, Tempban, Warn, Warnings, ResetWarns`" + "\n\n"+
     "**Information**\n`Help, Covid, Weather, Userinfo, Serverinfo, Ping`")

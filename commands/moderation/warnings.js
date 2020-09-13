@@ -24,7 +24,7 @@ module.exports = {
     let embed = new MessageEmbed()
       .setColor(Color)
       .setTitle(`Member Warnings!`)
-      .addField(`${Member.user.username} Has ${Warnings || "0"} Warnings!`)
+      .setDescription(`${Member.user.username} Has ${Warnings || "0"} Warnings!`)
       .setFooter(`Requested by ${message.author.username}`)
       .setTimestamp();
 

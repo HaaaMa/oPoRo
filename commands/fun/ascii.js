@@ -26,9 +26,6 @@ module.exports = {
       .setDescription("```" + Result + "```")
       .setTimestamp();
 
-    if (args.length === 1)
-      return message.channel.send(`1 Word Really? whatever`);
-
     if (Content.length > 20)
       return message.channel.send(`Please Make Shorter! | Limit : 20`);
 
