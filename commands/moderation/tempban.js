@@ -37,23 +37,26 @@ module.exports = {
 
     let User = message.guild.member(Member.user);
 
-    let BotRole = message.guild.member(message.guild.me).roles.highest.position;
+    if (Member.roles) {
+      let BotRole = message.guild.member(message.guild.me).roles.highest
+        .position;
 
-    let Role = User.roles.highest.position;
+      let Role = User.roles.highest.position;
 
-    let UserRole = message.member.roles.highest.position;
+      let UserRole = message.member.roles.highest.position;
 
-    if (UserRole <= Role)
-      return message.channel.send(
-        `I Can't Tempban That Member Because That Member Has Role Position Is Higher Than My Role Or Same Role As You!`
-      );
+      if (UserRole <= Role)
+        return message.channel.send(
+          `I Can't Tempban That Member Because That Member Has Role Position Is Higher Than My Role Or Same Role As You!`
+        );
 
-    if (BotRole <= Role)
-      return message.channel.send(
-        `I Can't Tempban That Member Because That Member Has Role Position Is Higher Than My Role Or Same Role As Me!`
-      );
+      if (BotRole <= Role)
+        return message.channel.send(
+          `I Can't Tempban That Member Because That Member Has Role Position Is Higher Than My Role Or Same Role As Me!`
+        );
+    }
 
-    if (!User.bannable) return message.channel.send(`I Can't Ban That Member!`);
+    if (!Member.bannable) return message.channel.send(`I Can't Ban That Member!`);
 
     let Time = args.slice(1).join(" ");
 
@@ -62,7 +65,7 @@ module.exports = {
     try {
       console.log(`Member Is Going To Get Ban!`);
       setTimeout(function() {
-        User.ban({ reason: "No Reason Provided!" });
+        Member.ban({ reason: "No Reason Provided!" });
       }, 2000);
       let embed = new Discord.MessageEmbed()
         .setColor(Color)
@@ -71,7 +74,7 @@ module.exports = {
         .addField(`Banned Member`, `${Member.tag} (${Member.id})`)
         .setFooter(`Requested by ${message.author.username}`)
         .setTimestamp();
-      if (User && Member.bot === false)
+      if (Member && Member.bot === false)
         Member.send(
           `You Have Been Banned From **${message.guild.name}** For
             "No Reason Provided!"`
