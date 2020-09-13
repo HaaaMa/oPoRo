@@ -3,10 +3,10 @@ const { MessageEmbed } = require("discord.js");
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "mute",
+  name: "unmute",
   aliases: [],
-  description: "Mute A User!",
-  usage: "Mute <Mention User> | <Reason>",
+  description: "Unmute A User!",
+  usage: "Unmute <Mention User>",
   run: async (client, message, args) => {
     //Start
     message.delete();
@@ -21,26 +21,23 @@ module.exports = {
 
     if (!Role)
       return message.channel.send(
-        `Please Create Mute Role | Role Name : Muted`
+        `There Is No Mute Role, So Member Is Not Muted Anymore!`
       );
 
-    if (Member.user.roles.cache.has(Role)) {
-      return message.channel.send(`Member Is Already Muted!`);
+    if (!Member.user.roles.cache.has(Role)) {
+      return message.channel.send(`Member Is Already Unmuted!`);
     }
-
-    let Reason = args.slice(1).join(" ");
 
     let Embed = new MessageEmbed()
       .setColor(Color)
-      .setTitle(`Member Muted!`)
+      .setTitle(`Member Unmuted!`)
       .addField(`Moderator`, `${message.author.tag} (${message.author.id}`)
-      .addField(`Muted Member`, `${Member.user.tag} (${Member.user.id})`)
-      .addField(`Reason`, `${Reason || "No Reason Provided!"}`)
+      .addField(`Unmuted Member`, `${Member.user.tag} (${Member.user.id})`)
       .setFooter(`Requested by ${message.author.username}`)
       .setTimestamp();
 
-    if (Role && !Member.user.roles.cache.has(Role)) {
-      Member.user.roles.add([Role]);
+    if (Role && Member.user.roles.cache.has(Role)) {
+      Member.user.roles.remove([Role]);
       return message.channel.send(Embed);
     } else {
       return message.channel.send(`Something Went Wrong, Try Again Later!`);
