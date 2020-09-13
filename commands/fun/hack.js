@@ -38,7 +38,7 @@ module.exports = {
       .substr(2, pass);
 
     let Member =
-      message.mentions.users.first() ||
+      message.mentions.members.first() ||
       message.guild.members.cache.get(args[0]) ||
       message.member;
 
