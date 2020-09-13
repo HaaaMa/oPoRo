@@ -33,7 +33,7 @@ module.exports = {
 
     let Reason = args.slice(1).join(" ") || "No Reason Provided!";
 
-    message.channel.bulkDelete(args[0] + 1).then(Message => {
+    message.channel.bulkDelete(args[0]).then(Message => {
       let embed = new Discord.MessageEmbed()
         .setColor(Color)
         .setTitle(`Messages Deleted!`)

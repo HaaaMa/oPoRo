@@ -24,7 +24,7 @@ module.exports = {
         `Please Create Mute Role | Role Name : Muted`
       );
 
-    if (Member.user.roles.cache.has(Role)) {
+    if (Member.roles.cache.has(Role)) {
       return message.channel.send(`Member Is Already Muted!`);
     }
 
@@ -39,8 +39,8 @@ module.exports = {
       .setFooter(`Requested by ${message.author.username}`)
       .setTimestamp();
 
-    if (Role && !Member.user.roles.cache.has(Role)) {
-      Member.user.roles.add([Role]);
+    if (Role && !Member.roles.cache.has(Role)) {
+      Member.roles.add([Role]);
       return message.channel.send(Embed);
     } else {
       return message.channel.send(`Something Went Wrong, Try Again Later!`);

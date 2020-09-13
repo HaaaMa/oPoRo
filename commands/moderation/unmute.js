@@ -24,7 +24,7 @@ module.exports = {
         `There Is No Mute Role, So Member Is Not Muted Anymore!`
       );
 
-    if (!Member.user.roles.cache.has(Role)) {
+    if (!Member.roles.cache.has(Role)) {
       return message.channel.send(`Member Is Already Unmuted!`);
     }
 
@@ -36,8 +36,8 @@ module.exports = {
       .setFooter(`Requested by ${message.author.username}`)
       .setTimestamp();
 
-    if (Role && Member.user.roles.cache.has(Role)) {
-      Member.user.roles.remove([Role]);
+    if (Role && Member.roles.cache.has(Role)) {
+      Member.roles.remove([Role]);
       return message.channel.send(Embed);
     } else {
       return message.channel.send(`Something Went Wrong, Try Again Later!`);

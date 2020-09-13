@@ -18,6 +18,7 @@ module.exports = {
     let Result = Math.floor(Math.random() * 101);
 
     let embed = new MessageEmbed()
+      .setColor(Color)
       .setTitle(`Gay v2 Machine`)
       .setDescription(`${Member.user.username} Is ${Result}% Gay 🏳️‍🌈`)
       .setFooter(`Requested by ${message.author.username}`)
