@@ -3,10 +3,10 @@ const { MessageEmbed } = require("discord.js");
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "warn",
-  aliases: [],
-  description: "Warn A User!",
-  usage: "Warn <Mention User> | <Reason>",
+  name: "warnings",
+  aliases: ["warning"],
+  description: "Show User Warnings!",
+  usage: "Warnings <Mention User>",
   run: async (client, message, args) => {
     //Start
     message.delete();
@@ -17,21 +17,14 @@ module.exports = {
 
     if (!Member) return message.channel.send(`Please Mention A User!`);
 
-    let Reason = args.slice(1).join(" ");
-
-    client.db.add(`Warnings_${message.guild.id}_${Member.user.id}`, 1);
-
     let Warnings = client.db.get(
       `Warnings_${message.guild.id}_${Member.user.id}`
     );
 
     let embed = new MessageEmbed()
       .setColor(Color)
-      .setTitle(`Member Warned!`)
-      .addField(`Moderator`, `${message.author.tag} (${message.author.id}`)
-      .addField(`Warned Member`, `${Member.user.tag} (${Member.user.id})`)
-      .addField(`Now Member Warnings`, Warnings)
-      .addField(`Reason`, `${Reason || "No Reason Provided!"}`)
+      .setTitle(`Member Warnings!`)
+      .addField(`${Member.user.username} Has ${Warnings || "0"} Warnings!`)
       .setFooter(`Requested by ${message.author.username}`)
       .setTimestamp();
 
