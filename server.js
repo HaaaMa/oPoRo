@@ -1,34 +1,88 @@
-// server.js
-// where your node app starts
+const Discord = require("discord.js");
+const fs = require("fs");
+const client = new Discord.Client();
+const { Prefix, Token, Color } = require("./config.js");
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
+client.db = require("quick.db");
 
-// we've started you off with Express (https://expressjs.com/)
-// but feel free to use whatever libraries or frameworks you'd like through `package.json`.
-const express = require("express");
-const app = express();
-
-// our default array of dreams
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
-
-// make all the files in 'public' available
-// https://expressjs.com/en/starter/static-files.html
-app.use(express.static("public"));
-
-// https://expressjs.com/en/starter/basic-routing.html
-app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/views/index.html");
+client.on("ready", async () => {
+  console.log(`ready!`);
+  client.user
+    .setActivity(`Servers : ${await client.guilds.cache.size} | Users : ${await client.users.cache.size}`, { type: "PLAYING" })
+    .catch(error => console.log(error));
 });
 
-// send the default array of dreams to the webpage
-app.get("/dreams", (request, response) => {
-  // express helps us take JS objects and send them as JSON
-  response.json(dreams);
+client.on("message", async message => {
+  if (message.channel.type === "dm") return;
+  if (message.author.bot) return;
+  if (!message.guild) return;
+  if (!message.member)
+    message.member = await message.guild.fetchMember(message);
+
+  if (message.content.match(new RegExp(`^<@!?${client.user.id}>`))) {
+    return message.channel.send(`My Prefix Is : ${Prefix}`);
+  }
 });
 
-// listen for requests :)
-const listener = app.listen(process.env.PORT, () => {
-  console.log("Your app is listening on port " + listener.address().port);
+let modules = ["fun", "info", "moderation"];
+
+modules.forEach(function(module) {
+  fs.readdir(`./commands/${module}`, function(err, files) {
+    if (err)
+      return new Error(
+        "Missing Folder Of Commands! Example : Commands/<Folder>/Command.js"
+      );
+    files.forEach(function(file) {
+      if (!file.endsWith(".js")) return;
+      let command = require(`./commands/${module}/${file}`);
+      console.log(`${command.name} Command Has Been Loaded - ✅`);
+      if (command.name) client.commands.set(command.name, command);
+      if (command.aliases) {
+        command.aliases.forEach(alias =>
+          client.aliases.set(alias, command.name)
+        );
+      }
+      if (command.aliases.length === 0) command.aliases = null;
+    });
+  });
 });
+
+client.on("message", async message => {
+  if (message.channel.type === "dm") return;
+  if (message.author.bot) return;
+  if (!message.guild) return;
+  if (!message.member)
+    message.member = await message.guild.fetchMember(message);
+  
+  let ServerPrefix = await client.db.fetch(`Prefix_${message.guild.id}`);
+  if (ServerPrefix === null) ServerPrefix = Prefix;
+
+  if (!message.content.startsWith(ServerPrefix)) return;
+
+  const args = message.content
+    .slice(ServerPrefix.length)
+    .trim()
+    .split(" ");
+  const cmd = args.shift().toLowerCase();
+
+  if (cmd.length === 0) return;
+
+  let command =
+    client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
+
+  if (!command) return;
+
+  if (command) {
+    if (!message.guild.me.hasPermission("ADMINISTRATOR"))
+      return message.channel.send(
+        "I Don't Have Enough Permission To Use This Or Any Of My Commands | Require : Administrator"
+      );
+    command.run(client, message, args);
+  }
+  console.log(
+    `User : ${message.author.tag} (${message.author.id}) Server : ${message.guild.name} (${message.guild.id}) Command : ${command.name}`
+  );
+});
+
+client.login(Token);

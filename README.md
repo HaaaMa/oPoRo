@@ -1,30 +1,19 @@
-# hello-express
+# How To Start?
 
-A server that serves a webpage, its resources, and some data
+- After Filling Config.js Bot Will Start Automatically If Not [Follow These Steps!](https://hatebin.com/iqydtysrto)
 
+# How To Invite?
 
-## Your Project
+- [Click Me](https://discordjs.guide/preparations/adding-your-bot-to-servers.html)
 
-On the front-end,
+# Errors!
 
-- Edit `views/index.html` to change the content of the webpage
-- `public/client.js` is the javacript that runs when you load the webpage
-- `public/style.css` is the styles for `views/index.html`
-- Drag in `assets`, like images or music, to add them to your project
+- Please Contact Legendary Emoji#1742 Also If Error Is Big Or You Want Something Big To Add You Need To Give Me 10$
 
-On the back-end,
+- Thank You
 
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
+# Information
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy.
+- What Is Token And How To Get It? | [Click Me](https://discordjs.guide/preparations/setting-up-a-bot-application.html)
 
-
-## Made by [Glitch](https://glitch.com/)
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
-
-( ᵔ ᴥ ᵔ )
+- Color? | Bot All Message Embeds Color
