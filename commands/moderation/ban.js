@@ -38,6 +38,22 @@ module.exports = {
 
     let User = message.guild.member(Member);
 
+    let BotRole = message.guild.member(message.guild.me).roles.highest.position;
+
+    let Role = User.roles.highest.position;
+
+    let UserRole = message.member.roles.highest.position;
+
+    if (UserRole <= Role)
+      return message.channel.send(
+        `I Can't Ban That Member Because That Member Has Role Position Is Higher Than My Role Or Same Role As You!`
+      );
+
+    if (BotRole <= Role)
+      return message.channel.send(
+        `I Can't Ban That Member Because That Member Has Role Position Is Higher Than My Role Or Same Role As Me!`
+      );
+
     if (!User.bannable) return message.channel.send(`I Can't Ban That Member!`);
 
     try {

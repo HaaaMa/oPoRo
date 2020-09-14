@@ -35,7 +35,7 @@ module.exports = {
     if (Member.id === message.guild.owner.user.id)
       return message.channel.send(`You Can't Ban Owner Of Server!`);
 
-    let User = message.guild.member(Member);
+    let User = message.guild.member(Member.user);
 
     if (Member.roles) {
       let BotRole = message.guild.member(message.guild.me).roles.highest
@@ -56,7 +56,7 @@ module.exports = {
         );
     }
 
-    if (!User.bannable) return message.channel.send(`I Can't Ban That Member!`);
+    if (!Member.bannable) return message.channel.send(`I Can't Ban That Member!`);
 
     let Time = args.slice(1).join(" ");
 
@@ -65,7 +65,7 @@ module.exports = {
     try {
       console.log(`Member Is Going To Get Ban!`);
       setTimeout(function() {
-        User.ban({ reason: "No Reason Provided!" });
+        Member.ban({ reason: "No Reason Provided!" });
       }, 2000);
       let embed = new Discord.MessageEmbed()
         .setColor(Color)
@@ -74,7 +74,7 @@ module.exports = {
         .addField(`Banned Member`, `${Member.tag} (${Member.id})`)
         .setFooter(`Requested by ${message.author.username}`)
         .setTimestamp();
-      if (User && Member.bot === false)
+      if (Member && Member.bot === false)
         Member.send(
           `You Have Been Banned From **${message.guild.name}** For
             "No Reason Provided!"`
@@ -100,7 +100,7 @@ module.exports = {
       .setTimestamp();
 
     setTimeout(function() {
-      message.guild.members.unban(Member.id, "No Reason Provided!");
+      message.guild.members.unban(Member.user.id, "No Reason Provided!");
       message.channel.send(embed2);
     }, ms(Time));
     //End
