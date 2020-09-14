@@ -26,7 +26,6 @@ module.exports = {
       .addField("Full Name", member.user.tag, true)
       .addField("ID", `${member.id}`, true)
       .addField("Status", statuses[member.presence.status], true)
-      .addField(`Highest Role`, `${member.roles.highest || "No Role!"}`, true)
       .addField(
         `Roles Count`,
         message.guild.members.cache.get(member.user.id).roles.cache.size ||

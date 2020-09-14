@@ -10,32 +10,6 @@ module.exports = {
   run: async (client, message, args) => {
     //Start
     message.delete();
-    let pass = Math.floor(Math.random() * 16);
-
-    let email = [
-      "gmail.com",
-      "email.com",
-      "outlook.com",
-      "hotmail.com",
-      "mail.com",
-      "yahoo.com",
-      "gmx.com",
-      "aol.com",
-      "fastmail.com",
-      "yandex.com",
-      "protonmail.com",
-      "hushmail.com",
-      "theflopwop.com",
-      "yeetdesigns.glitch.me",
-      "fucker.com"
-    ];
-
-    let emails = email[Math.floor(Math.random() * email.length)];
-
-    let passwords = Math.random()
-      .toString(36)
-      .toLowerCase()
-      .substr(2, pass);
 
     let Member =
       message.mentions.members.first() ||
@@ -56,7 +30,7 @@ module.exports = {
       .setDescription(
         `Name: ${Member.user.username} | ID: ${
           Member.user.id
-        } | Email: ${Member.user.username + pass}@${emails} | Password: ${passwords}`
+        }`
       )
       .setFooter(`Jk Don't Take It Serious Its Just Random Generated Strings!`)
       .setTimestamp();

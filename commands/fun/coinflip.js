@@ -16,7 +16,7 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setColor(Color)
-      .setTitle(`The Coin Landed On`)
+      .setTitle(`Coin Is`)
       .setDescription(coins[result])
       .setFooter(`Fliped by ${message.author.username}`)
       .setTimestamp();

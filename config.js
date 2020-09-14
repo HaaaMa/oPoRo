@@ -1,3 +1,3 @@
-exports.Token = `NzA5MzcyNTYyODY5NzE1MDM1.Xrk8rg.VNf_kMEHSvJz_pi5G9hcvur9UR0`;
-exports.Prefix = `p!`;
-exports.Color = `BLUE`;
+exports.Prefix = `Put Your Bot Prefix Here!`;
+exports.Token = `Put Your Bot Token Here!`;
+exports.Color = `Put All Bot Embeds Messages Color | Use Hex Code Or Use CAPS If You Put Color Name Example : BLUE`;

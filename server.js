@@ -21,7 +21,7 @@ client.on("message", async message => {
     message.member = await message.guild.fetchMember(message);
 
   if (message.content.match(new RegExp(`^<@!?${client.user.id}>`))) {
-    return message.channel.send(`My Prefix Is : ${Prefix}`);
+    return message.channel.send(`Bot Prefix : ${Prefix}`);
   }
 });
 
@@ -31,7 +31,7 @@ modules.forEach(function(module) {
   fs.readdir(`./commands/${module}`, function(err, files) {
     if (err)
       return new Error(
-        "Missing Folder Of Commands! Example : Commands/<Folder>/Command.js"
+        "Missing Folder Of Commands! Example : Commands/<Folder>/<Command>.js"
       );
     files.forEach(function(file) {
       if (!file.endsWith(".js")) return;
@@ -54,14 +54,11 @@ client.on("message", async message => {
   if (!message.guild) return;
   if (!message.member)
     message.member = await message.guild.fetchMember(message);
-  
-  let ServerPrefix = await client.db.fetch(`Prefix_${message.guild.id}`);
-  if (ServerPrefix === null) ServerPrefix = Prefix;
 
-  if (!message.content.startsWith(ServerPrefix)) return;
+  if (!message.content.startsWith(Prefix)) return;
 
   const args = message.content
-    .slice(ServerPrefix.length)
+    .slice(Prefix.length)
     .trim()
     .split(" ");
   const cmd = args.shift().toLowerCase();
@@ -84,6 +81,5 @@ client.on("message", async message => {
     `User : ${message.author.tag} (${message.author.id}) Server : ${message.guild.name} (${message.guild.id}) Command : ${command.name}`
   );
 });
-if ("true" === "true") {
-   client.login(Token); 
-}
+
+client.login(Token);

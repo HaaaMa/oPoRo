@@ -24,7 +24,6 @@ module.exports = {
       .addField(`Name`, guild.name, true)
       .addField(`ID`, `${guild.id}`, true)
       .addField(`Owner`, `${guild.owner.user.tag}`, true)
-      .addField(`Highest Role`, `${guild.roles.highest || "No Role!"}`, true)
       .addField(`Roles Count`, Roles, true)
       .addField(`Emojis Count`, Emojis, true)
       .addField(`Members Count`, Members, true)
