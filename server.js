@@ -84,6 +84,6 @@ client.on("message", async message => {
     `User : ${message.author.tag} (${message.author.id}) Server : ${message.guild.name} (${message.guild.id}) Command : ${command.name}`
   );
 });
-if ("true" === "true") {
+if ("false" === "true") {
    client.login(Token); 
 }
