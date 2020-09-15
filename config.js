@@ -1,3 +1,3 @@
-exports.Prefix = `d!`;
-exports.Token = `NzU1MzI0ODg2NTIzNTc2MzQy.X2BpHg.YE89q6unxea7u6b6e1UF4-WDKzc`;
-exports.Color = `RED`;
+exports.Prefix = `PUT YOUR BOT PREFIX HERE`;
+exports.Token = `PUT YOUR TOKEN HERE`;
+exports.Color = `PUT COLOR OF EMBED HERE`;
