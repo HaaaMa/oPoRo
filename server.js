@@ -9,8 +9,8 @@ client.db = require("quick.db");
 client.on("ready", async () => {
   console.log(`ready!`);
   client.user
-    ///.setActivity(`Servers : ${await client.guilds.cache.size} | Users : ${await client.users.cache.size}`, { type: "PLAYING" })
-       .setActivity(`>help`)  /// BiooBot
+     ///  .setActivity(`Servers : ${await client.guilds.cache.size} | Users : ${await client.users.cache.size}`, { type: "PLAYING" })
+       .setActivity(`R!help | 178 Server`)  /// BiooBot
     .catch(error => console.log(error));
 });
 
