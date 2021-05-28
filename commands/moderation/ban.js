@@ -4,7 +4,7 @@ const { Color } = require("../../config.js");
 
 module.exports = {
   name: "ban",
-  aliases: [],
+  aliases: ["gbx"],
   description: "Ban A Member!",
   usage: "Ban <Mention Member>",
   run: async (client, message, args) => {

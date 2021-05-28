@@ -9,8 +9,8 @@ client.db = require("quick.db");
 client.on("ready", async () => {
   console.log(`ready!`);
   client.user
-     ///  .setActivity(`Servers : ${await client.guilds.cache.size} | Users : ${await client.users.cache.size}`, { type: "PLAYING" })
-       .setActivity(`R!help | 178 Server`)  /// BiooBot
+       .setActivity(`${Prefix}help Servers ${await client.guilds.cache.size}`, { type: "PLAYING" })
+       .setActivity(`HaaaMa Upppp`)  /// BiooBot
     .catch(error => console.log(error));
 });
 
@@ -60,7 +60,7 @@ client.on("message", async message => {
 
   const args = message.content
     .slice(Prefix.length)
-    .trim()
+    .trim() //haaama
     .split(" ");
   const cmd = args.shift().toLowerCase();
 
@@ -79,7 +79,7 @@ client.on("message", async message => {
     command.run(client, message, args);
   }
   console.log(
-    `User : ${message.author.tag} (${message.author.id}) Server : ${message.guild.name} (${message.guild.id}) Command : ${command.name}`
+    `User : ${message.author.tag} (${message.author.id}) Server : ${message.guild.name} (${message.guild.id}) Command : ${command.name}` //haama
   );
 });
 

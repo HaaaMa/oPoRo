@@ -4,7 +4,7 @@ const { Color } = require("../../config.js");
 
 module.exports = {
   name: "howgay",
-  aliases: [],
+  aliases: ["hg"],
   description: "Show How Gay Member Is!",
   usage: "Howgay <Mention Member>",
   run: async (client, message, args) => {
