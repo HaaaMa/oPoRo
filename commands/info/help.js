@@ -8,17 +8,20 @@ module.exports = {
   description: "Help Command!",
   usage: "Help | <Command Name>",
   run: async(client, message, args) => {
-    
-    message.delete();
+ 
+    //   message.delete();
     
     let embed = new MessageEmbed()
     .setColor(Color)
     .setTitle(`${client.user.username} Commands!`)
     .setDescription(`Use ${Prefix}Help <Command Name> For More Command Information!` + 
     "\n\n**Fun**\n`Avatar, Coinflip, Howgay, Meme, Rate, 8ball, Dicksize, Ascii, Choose, Hack, Randomnumber`" + "\n\n" + "**Moderation**\n`Clear, Mute, Unmute, Tempmute, Kick, Ban, Unban, Tempban, Warn, Warnings, ResetWarns`" + "\n\n"+
-    "**Information**\n`Help, Covid, Weather, Userinfo, Serverinfo, Ping`")
+    "**Information**\n`Help, Covid, Weather, Userinfo, Serverinfo, Ping` " + "\n\n" + "**text Command**\n`text1, text2, text3, text4`")
     .setFooter(`Requested By ${message.author.username}`)
+    .setImage(`https://media.discordapp.net/attachments/790836700561670145/823722035678281758/image0.gif`)
     .setTimestamp();
+    message.react(`✅`)
+ 
     
     if (!args.length) return message.channel.send(embed);
 
@@ -32,6 +35,7 @@ module.exports = {
       .addField(`Aliases`, cmd.aliases || "None!")
       .addField(`Usage`, cmd.usage || "No Usage")
       .addField(`Description`, cmd.description || "No Description!")
+      
       .setTimestamp();
 
     if (cmd) {
