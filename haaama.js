@@ -9,7 +9,7 @@ client.db = require("quick.db");
 client.on("ready", async () => {
   console.log(`ready!`);
   client.user
-       .setActivity(`${Prefix}help Servers ${await client.guilds.cache.size}`, { type: "PLAYING" })
+       .setActivity(`${Prefix}help | Servers ${await client.guilds.cache.size}`, { type: "PLAYING" })
        .setActivity(`HaaaMa Upppp`)  /// BiooBot
     .catch(error => console.log(error));
 });
@@ -22,7 +22,7 @@ client.on("message", async message => {
     message.member = await message.guild.fetchMember(message);
 
   if (message.content.match(new RegExp(`^<@!?${client.user.id}>`))) {
-    return message.channel.send(`Bot Prefix : ${Prefix}`);
+    return message.channel.send(`**Bot Prefix, ( ${Prefix} )**`);
   }
 });
 
