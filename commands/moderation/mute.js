@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
-const { Color } = require("../../config.js");
+const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "mute",
@@ -8,8 +8,7 @@ module.exports = {
   description: "Mute A User!",
   usage: "Mute <Mention User> | <Reason>",
   run: async (client, message, args) => {
-    //Start
-    message.delete();
+    
 
     let Member =
       message.mentions.members.first() ||
@@ -31,7 +30,7 @@ module.exports = {
     let Reason = args.slice(1).join(" ");
 
     let Embed = new MessageEmbed()
-      .setColor(Color)
+      .setColor("black")
       .setTitle(`Member Muted!`)
       .addField(`Moderator`, `${message.author.tag} (${message.author.id}`)
       .addField(`Muted Member`, `${Member.user.tag} (${Member.user.id})`)
@@ -46,6 +45,6 @@ module.exports = {
       return message.channel.send(`Something Went Wrong, Try Again Later!`);
     }
 
-    //End
+    
   }
 };
