@@ -25,6 +25,6 @@ Black Up
     message.react(`✅`)
  
       return message.channel.send(embed);
-    }
+    
   }
-});
+};
