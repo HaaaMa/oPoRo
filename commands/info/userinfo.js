@@ -8,8 +8,7 @@ module.exports = {
   description: "Show User Information!",
   usage: "Userinfo | <Mention User>",
   run: async (client, message, args) => {
-    //Start
-    message.delete();
+    
     let member = message.mentions.users.first() || message.member;
 
     const statuses = {
@@ -40,6 +39,6 @@ module.exports = {
 
     message.channel.send(embed);
 
-    //End
+   
   }
 };
