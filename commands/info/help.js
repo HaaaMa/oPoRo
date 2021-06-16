@@ -22,7 +22,7 @@ module.exports = {
 
 **Moderation**
 \`ban\`, \`unban\`, \`kick\`,
-\`mute\`, \`unmute\`
+\`mute\`, \`unmute\`, \`clear\`
 
 **Funny**
 \`ascii\`, \`avatar\`, \`dicksize\`,
