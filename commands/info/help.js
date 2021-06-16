@@ -18,7 +18,7 @@ module.exports = {
     .setDescription(`
 **Info**
 \`help\`, \`ping\`, \`serverinfo\`,
-\`botinfo\`, \`userinfo\`
+\`userinfo\`, \`invite\`
 
 **Moderation**
 \`ban\`, \`unban\`, \`kick\`,
