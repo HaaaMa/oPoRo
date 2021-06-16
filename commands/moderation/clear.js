@@ -1,15 +1,14 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
-const { Color } = require("../../config.js");
+const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "clear",
-  aliases: ["purge", "clearmsgs"],
+  aliases: [],
   description: "Clear Your Messages!",
   usage: "Clear <Message Amount>",
   run: async (client, message, args) => {
-    //Start
-    message.delete();
+    
     if (!message.member.hasPermission("MANAGE_MESSAGES"))
       return message.channel.send(
         "You Don't Have Permission To Use This Command!"
@@ -35,13 +34,13 @@ module.exports = {
 
     message.channel.bulkDelete(args[0]).then(Message => {
       let embed = new Discord.MessageEmbed()
-        .setColor(Color)
+        .setColor("black")
         .setTitle(`Messages Deleted!`)
         .addField(`Moderator`, `${message.author.tag} (${message.author.id}`)
         .addField(`Channel`, `${message.channel.name} (${message.channel.id}`)
         .addField(`Deleted Messages`, `${Message.size}`)
         .addField(`Reason`, `${Reason}`)
-        .setFooter(`Requested by ${message.author.username}`)
+        .setFooter(`${message.author.username}`)
         .setTimestamp();
       return message.channel
         .send(embed)
