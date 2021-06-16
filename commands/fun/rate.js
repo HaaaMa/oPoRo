@@ -8,8 +8,7 @@ module.exports = {
   description: "Bot Rate Your Given Thing!",
   usage: "Rate <Text>",
   run: async (client, message, args) => {
-    //Start
-    message.delete();
+   
     let Content = args.join(" ");
 
     if (!Content)
@@ -24,6 +23,6 @@ module.exports = {
 
     message.channel.send(embed);
 
-    //End
+    
   }
 };
