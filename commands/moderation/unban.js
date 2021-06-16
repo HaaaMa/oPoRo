@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
-const { Color } = require("../../config.js");
+const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "unban",
@@ -8,8 +8,7 @@ module.exports = {
   description: "Unban A Member!",
   usage: "Unban <Member ID>",
   run: async (client, message, args) => {
-    //Start
-    message.delete();
+    
     if (!message.member.hasPermission("BAN_MEMBERS"))
       return message.channel.send(
         `You Don't Have Permission To Use This Command!`
@@ -59,7 +58,7 @@ module.exports = {
     }
 
     let embed = new MessageEmbed()
-      .setColor(Color)
+      .setColor("black")
       .setTitle(`Member Unbanned!`)
       .addField(`Moderator`, `${message.author.tag} (${message.author.id}}`)
       .addField(`Unbanned Member`, `${Member.user.tag} (${Member.user.id}`)
@@ -69,6 +68,6 @@ module.exports = {
 
     return message.channel.send(embed);
 
-    //End
+    
   }
 };
