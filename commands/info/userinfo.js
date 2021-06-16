@@ -1,10 +1,10 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
-const { Color } = require("../../config.js");
+const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "userinfo",
-  aliases: ["memberinfo", "whois"],
+  aliases: [],
   description: "Show User Information!",
   usage: "Userinfo | <Mention User>",
   run: async (client, message, args) => {
@@ -20,7 +20,7 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setTitle(member.user.username + " Information!")
-      .setColor(Color)
+      .setColor("BLACK")
       .setThumbnail(member.user.displayAvatarURL())
       .addField("Full Name", member.user.tag, true)
       .addField("ID", `${member.id}`, true)
