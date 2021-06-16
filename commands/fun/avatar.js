@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
-const { Color } = require("../../config.js");
+const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "avatar",
@@ -16,7 +16,7 @@ module.exports = {
       message.member;
 
     let embed = new Discord.MessageEmbed()
-      .setColor(Color)
+      .setColor("black")
       .addField(
         "Links",
         `[png](${Member.user.displayAvatarURL({
