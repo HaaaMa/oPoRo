@@ -5,9 +5,9 @@
   "name": "hello-express",
   "version": "0.0.1",
   "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "haaama.js",
+  "main": "bot.js",
   "scripts": {
-    "start": "node haaama.js"
+    "start": "node bot.js"
   },
   "dependencies": {
     "express": "^4.17.1",
