@@ -12,7 +12,7 @@ module.exports = {
     
     
     let embed = new MessageEmbed()
-    .setColor(Color)
+    .setColor("BLACK")
     .setTitle(`Help Commands!`)
 
     .setDescription(`
