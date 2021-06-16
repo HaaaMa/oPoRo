@@ -11,7 +11,7 @@ module.exports = {
   description: "Ascii Art!",
   usage: "Ascii <Text>",
   run: async (client, message, args) => {
-    //Start
+    
 
     message.delete();
     
@@ -33,6 +33,6 @@ module.exports = {
 
     message.delete();
 
-    //End
+    
   }
 };
