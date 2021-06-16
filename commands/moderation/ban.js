@@ -1,25 +1,24 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
-const { Color } = require("../../config.js");
+const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "ban",
-  aliases: ["gbx"],
+  aliases: [],
   description: "Ban A Member!",
   usage: "Ban <Mention Member>",
   run: async (client, message, args) => {
-    //Start
-    message.delete();
+   
     if (!message.member.hasPermission("BAN_MEMBERS"))
       return message.channel.send(
-        `You Don't Have Permission To Use This Command!`
+        `You Don't Have Permission`
       );
 
     let Member = message.mentions.users.first();
 
     if (!Member)
       return message.channel.send(
-        `Please Mention A Member That You Want To Ban!`
+        `Mention: ${Prefix}ban @user`
       );
 
     if (!message.guild.members.cache.get(Member.id))
@@ -29,7 +28,7 @@ module.exports = {
       return message.channel.send(`You Can't Ban Your Self!`);
 
     if (Member.id === client.user.id)
-      return message.channel.send(`Please Don't Ban Me ;-;`);
+      return message.channel.send(`Please Don't Ban Me`);
 
     if (Member.id === message.guild.owner.user.id)
       return message.channel.send(`You Can't Ban Owner Of Server!`);
@@ -46,12 +45,12 @@ module.exports = {
         User.ban({ reason: `${Reason || "No Reason Provided!"}` });
       }, 2000);
       let embed = new Discord.MessageEmbed()
-        .setColor(Color)
+        .setColor("black")
         .setTitle(`Member Banned!`)
         .addField(`Moderator`, `${message.author.tag} (${message.author.id}`)
         .addField(`Banned Member`, `${Member.tag} (${Member.id})`)
         .addField(`Reason`, `${Reason || "No Reason Provided!"}`)
-        .setFooter(`Requested by ${message.author.username}`)
+        .setFooter(`${message.author.username}`)
         .setTimestamp();
       if (User && Member.bot === false)
         Member.send(
@@ -72,6 +71,6 @@ module.exports = {
         .then(() => console.log(error));
     }
 
-    //End
+    
   }
 };
