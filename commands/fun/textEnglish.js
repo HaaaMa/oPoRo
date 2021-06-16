@@ -9,7 +9,7 @@ module.exports = {
   usage: "text",
   run: async (client, message, args) => {
     
-    message.delete();
+    
     let sizes = ["","","","","","","","","","","","","","",""];
 
     let Member =
