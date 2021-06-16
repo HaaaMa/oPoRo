@@ -9,8 +9,8 @@ client.db = require("quick.db");
 client.on("ready", async () => {
   console.log(`ready!`);
   client.user
-       .setActivity(`${Prefix}help | Servers ${await client.guilds.cache.size}`, { type: "PLAYING" })
-       .setActivity(`HaaaMa Upppp`)  /// BiooBot
+       .setActivity(`${Prefix}help`, { type: "PLAYING" })
+       .setActivity(`Black`)
     .catch(error => console.log(error));
 });
 
@@ -22,11 +22,11 @@ client.on("message", async message => {
     message.member = await message.guild.fetchMember(message);
 
   if (message.content.match(new RegExp(`^<@!?${client.user.id}>`))) {
-    return message.channel.send(`**Bot Prefix, ( ${Prefix} )**`);
+    return message.channel.send(`My Prefix is \`${Prefix}\``);
   }
 });
 
-let modules = ["fun", "info", "moderation"];
+let modules = ["fun", "info", "moderation", "gifs"""];
 
 modules.forEach(function(module) {
   fs.readdir(`./commands/${module}`, function(err, files) {
@@ -60,7 +60,7 @@ client.on("message", async message => {
 
   const args = message.content
     .slice(Prefix.length)
-    .trim() //haaama
+    .trim()
     .split(" ");
   const cmd = args.shift().toLowerCase();
 
@@ -79,7 +79,7 @@ client.on("message", async message => {
     command.run(client, message, args);
   }
   console.log(
-    `User : ${message.author.tag} (${message.author.id}) Server : ${message.guild.name} (${message.guild.id}) Command : ${command.name}` //haama
+    `User : ${message.author.tag} (${message.author.id}) Server : ${message.guild.name} (${message.guild.id}) Command : ${command.name}`
   );
 });
 
