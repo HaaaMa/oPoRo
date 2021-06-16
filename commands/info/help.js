@@ -40,6 +40,8 @@ module.exports = {
 
 **Texts**
 \`textkurdish\`, \`textenglish\`, \`textarabic\`
+
+
 `)
     .setFooter(`${message.author.username}`)
     .setImage(``)
