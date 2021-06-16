@@ -9,8 +9,7 @@ module.exports = {
   description: "Send A Meme!",
   usage: "Meme",
   run: async (client, message, args) => {
-    //Start
-    message.delete();
+    
     fetch("https://meme-api.herokuapp.com/gimme")
       .then(res => res.json())
       .then(json => {
@@ -24,6 +23,6 @@ module.exports = {
         message.channel.send(embed);
       });
 
-    //End
+   
   }
 };
