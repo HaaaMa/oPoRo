@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
-const { Color } = require("../../config.js");
+const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "dicksize",
@@ -39,7 +39,7 @@ module.exports = {
     let Result = sizes[Math.floor(Math.random() * sizes.length)];
 
     let embed = new MessageEmbed()
-      .setColor(Color)
+      .setColor("black")
       .setDescription(`${Member.user.username} pp Size Is\n${Result}`)
       .setFooter(`Requested by ${message.author.username}`)
       .setTimestamp();
