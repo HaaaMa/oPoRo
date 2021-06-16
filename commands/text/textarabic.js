@@ -19,12 +19,10 @@ module.exports = {
 
     let Result = sizes[Math.floor(Math.random() * sizes.length)];
 
-    let embed = new MessageEmbed()
-      .setColor("black")
-      .setDescription(`\n${Result}`)
-
-    message.channel.send(embed);
-
-    
-  }
-};
+    message.channel.send(replies[result]).then(message => {
+			message.react('🥺').then(r => {
+				message.react('🖤');
+           });
+          });
+      }
+}
