@@ -16,7 +16,27 @@ module.exports = {
     .setTitle(`Help Commands!`)
 
     .setDescription(`
-Black Up
+**Info**
+\`help\`, \`ping\`, \`serverinfo\`,
+\`botinfo\`, \`userinfo\`
+
+**Moderation**
+\`ban\`, \`unban\`, \`kick\`,
+\`mute\`, \`unmute\`
+
+**Funny**
+\`ascii\`, \`avatar\`, \`dicksize\`,
+\`howgay\`, \`rate\`
+
+**Gifs**
+\`boy\`, \`girl\`, \`anime\`,
+\`animal\`, \`baby\`, \`couple\`,
+\`emoji\`
+
+**Photos**
+\`picboy\`, \`picgirl\`, \`picanime\`,
+\`picanimal\`, \`picbaby\`, \`piccouple\`,
+\`picemoji\`
 
 `)
     .setFooter(`${message.author.username}`)
