@@ -13,7 +13,7 @@ module.exports = {
   run: async (client, message, args) => {
     
 
-    message.delete();
+    
     
     let Content = args.join(" ");
 
