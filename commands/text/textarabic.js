@@ -4,13 +4,13 @@ const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "textarabic",
-  aliases: [],
+  aliases: ["textArabic"],
   description: "Show text",
   usage: "text",
   run: async (client, message, args) => {
     
     
-    let sizes = ["","","","","","","","","","","","","","",""];
+    let sizes = ["إذا زارتک شدّه فاعلم أنّها سحابه صیف عن قلیل تقشع، ولا یخیفک رعدها، ولا یرهبک برقها، فربّما کانت محمّلهً بالغیث","چنت اعاتب بالوكت عرفني بيك :broken_heart: :exclamation:","أخاف أفگد طعم باچر يالمتانيك:wilted_rose:","اسألني واني اختصر لعيونك المده :wilted_rose:","وأستحيت من الله حيل ، وآنه سآجد مر ذكرهم والتهيت :wilted_rose:","ما خربتني وياك غير اليكولون:wilted_rose:","شگلّك يالعلي تسأل.. انا التيهت كلشي وكلشي ما اندل:wilted_rose:","هي مسؤولية من تحبلك انسان :broken_heart: "];
 
     let Member =
       message.mentions.members.first() ||
