@@ -38,6 +38,8 @@ module.exports = {
 \`picanimal\`, \`picbaby\`, \`piccouple\`,
 \`picemoji\`
 
+**Texts**
+\`textkurdish\`, \`textenglish\`, \`textarabic\`
 `)
     .setFooter(`${message.author.username}`)
     .setImage(``)
