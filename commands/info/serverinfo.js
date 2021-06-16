@@ -4,12 +4,11 @@ const { Color } = require("../../config.js");
 
 module.exports = {
   name: "serverinfo",
-  aliases: ["serverinformation"],
+  aliases: [],
   description: "Show Server Information!",
   usage: "Serverinfo",
   run: async (client, message, args) => {
-    //Start
-    message.delete();
+    
     const guild = message.guild;
     const Emojis = guild.emojis.cache.size || "No Emoji!";
     const Roles = guild.roles.cache.size || "No Roles!";
@@ -35,6 +34,6 @@ module.exports = {
 
     message.channel.send(embed);
 
-    //End
+    
   }
 };
