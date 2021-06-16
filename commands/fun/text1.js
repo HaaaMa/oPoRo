@@ -3,33 +3,14 @@ const { MessageEmbed } = require("discord.js");
 const { Color } = require("../../config.js");
 
 module.exports = {
-  name: "text",
-  aliases: ["text1", "textkurdish", "tk"],
+  name: "boy",
+  aliases: ["Boy"],
   description: "Show Member text!",
   usage: "text <Mention Member>",
   run: async (client, message, args) => {
     //Start
     message.delete();
-    let sizes = [
-      "Text1",
-      "Text2",
-      "Text3",
-      "Text3",
-      "Text4",
-      "Text5",
-      "Text6",
-      "Text7",
-      "Text8",
-      "Text9",
-      "Text10",
-      "Text11",
-      "Text12",
-      "Text13",
-      "Text14",
-      "Text15",
-      "Text16",
-      "Text17"
-    ];
+    let sizes = ["https://cdn.discordapp.com/attachments/608711476219478045/854727282261884950/Man_PP_Gif_66.gif","https://cdn.discordapp.com/attachments/608711476219478045/854725792176013312/Gif12.gif"];
 
     let Member =
       message.mentions.members.first() ||
