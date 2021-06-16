@@ -27,4 +27,4 @@ Black Up
       return message.channel.send(embed);
     }
   }
-};
+});
