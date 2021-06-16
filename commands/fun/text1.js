@@ -9,24 +9,22 @@ module.exports = {
   usage: "text <Mention Member>",
   run: async (client, message, args) => {
     //Start
-    message.delete();
-    let sizes = ["https://cdn.discordapp.com/attachments/608711476219478045/854727282261884950/Man_PP_Gif_66.gif","https://cdn.discordapp.com/attachments/608711476219478045/854725792176013312/Gif12.gif"];
+    let replies = ["https://cdn.discordapp.com/attachments/694694493525377035/737310007929864252/image0.gif"];
+    
+    let result = Math.floor((Math.random() * replies.length));
+    
+    let gifembed = new Discord.MessageEmbed()
 
-    let Member =
-      message.mentions.members.first() ||
-      message.guild.members.cache.get(args[0]) ||
-      message.member;
-
-    let Result = sizes[Math.floor(Math.random() * sizes.length)];
-
-    let embed = new MessageEmbed()
+    .setTitle("Boy Gif")
+    
       .setColor(Color)
-  //    .setTitle(`Pp v2 Machine`)
-      .setDescription(`\n${Result}`)
+    .setFooter(`${message.author.tag} `, message.author.avatarURL)
+    .setImage(replies[result]);
+
  //     .setFooter(`Requested by ${message.author.username}`)
 //      .setTimestamp();
 
-    message.channel.send(embed);
+    message.channel.send(gifembed);
 
     //End
   }
