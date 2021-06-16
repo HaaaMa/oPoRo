@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
-const { Color } = require("../../config.js");
+const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "picbaby",
@@ -17,7 +17,7 @@ module.exports = {
 
     .setTitle("Baby Photo")
     
-      .setColor(Color)
+      .setColor("black")
     .setFooter(`${message.author.tag} `, message.author.avatarURL)
     .setImage(replies[result]);
 
