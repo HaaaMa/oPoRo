@@ -47,6 +47,6 @@ module.exports = {
         .then(msg => msg.delete({ timeout: 10000 }));
     });
 
-    //End
+    
   }
 };
