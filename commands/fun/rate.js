@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
-const { Color } = require("../../config.js");
+const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "rate",
@@ -15,7 +15,7 @@ module.exports = {
       return message.channel.send(`Please Give Me Something To Rate!`);
 
     let embed = new Discord.MessageEmbed()
-      .setColor(Color)
+      .setColor("black")
       .setTitle(`I Rate`)
       .setDescription(`${Math.floor(Math.random() * 11)}/10 To ${Content}`)
       .setFooter(`Requested by ${message.author.username}`)
