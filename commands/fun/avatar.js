@@ -4,11 +4,11 @@ const { Color } = require("../../config.js");
 
 module.exports = {
   name: "avatar",
-  aliases: ["icon", "pfp"],
+  aliases: [],
   description: "Show Member Avatar!",
   usage: "Avatar | <Mention Member>",
   run: async (client, message, args) => {
-    //Start
+    
     message.delete();
     let Member =
       message.mentions.members.first() ||
@@ -35,6 +35,6 @@ module.exports = {
 
     message.channel.send(embed);
 
-    //End
+   
   }
 };
