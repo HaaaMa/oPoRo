@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
-const { Color } = require("../../config.js");
+const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "kick",
@@ -8,8 +8,7 @@ module.exports = {
   description: "Kick A Member!",
   usage: "Kick <Mention Member>",
   run: async (client, message, args) => {
-    //Start
-    message.delete();
+    
     if (!message.member.hasPermission("KICK_MEMBERS"))
       return message.channel.send(
         `You Don't Have Permission To Use This Command!`
@@ -48,7 +47,7 @@ module.exports = {
         User.kick({ reason: `${Reason || "No Reason Provided!"}` });
       }, 2000);
       let embed = new Discord.MessageEmbed()
-        .setColor(Color)
+        .setColor("black")
         .setTitle(`Member Kicked!`)
         .addField(`Moderator`, `${message.author.tag} (${message.author.id}`)
         .addField(`Kicked Member`, `${Member.tag} (${Member.id})`)
@@ -74,6 +73,6 @@ module.exports = {
         .then(() => console.log(error));
     }
 
-    //End
+    
   }
 };
