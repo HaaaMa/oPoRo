@@ -12,7 +12,7 @@ module.exports = {
     
     
     let embed = new MessageEmbed()
-    .setColor("BLACK")
+    .setColor("RANDOM")
     .setTitle(`Help oPoRo!`)
 
     .setDescription(`
