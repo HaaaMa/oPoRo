@@ -230,6 +230,48 @@ client.on("message", async message => {
 
 
 
+client.on("guildCreate", async guild => {
+  const embed = new Discord.RichEmbed()
+    .setColor(GREEN)
+    .setTitle(Joined!)
+    .setDescription(
+      Name server: ${guild.name} 
+
+\ ID Server: ${guild.id} 
+
+\Owned by: ${guild.owner}
+
+\member count ${guild.memberCount}
+
+\Created at: ${guild.createdAt}
+
+\Verification Level: ${guild.verificationLevel}
+
+invite kraya am servara 🤖 
+      
+    );
+ client.channels.get('853430369813659668').send(embed); 
+              
+});
+client.on("guildDelete", async guild => {
+  const embed = new Discord.RichEmbed()
+    .setColor(RED)
+    .setTitle(Kicked!)
+    .setDescription(
+      Name server: ${guild.name}
+\ID Server: ${guild.id}
+
+\Owner bay: ${guild.owner}
+
+\member count: ${guild.memberCount}
+
+\Created at : ${guild.createdAt}
+
+\Verification Level: ${guild.verificationLevel}
+
+ Dar kra lam servara🤖
+    );
+  client.channels.get('853430369813659668').send(embed);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Haaama /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa 
