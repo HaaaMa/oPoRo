@@ -16,7 +16,7 @@ module.exports = {
     .setTitle(`Help oPoRo!`)
 
     .setDescription(`
->>> 
+ 
 <a:infooporo:823333203459702836> **Info** <a:infooporo:823333203459702836>
 \`help\`, \`ping\`, \`serverinfo\`,
 \`userinfo\`, \`invite\`
@@ -48,7 +48,7 @@ module.exports = {
 `)
     .setFooter(`${message.author.username}`)
     .setImage(``)
-    .setTimestamp();
+  //  .setTimestamp();
     message.react(`✅`)
  
       return message.channel.send(embed);
