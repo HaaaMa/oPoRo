@@ -227,7 +227,7 @@ client.on("message", async message => {
 
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("853430369813659668");
-  let embed = new MessageEmbed().setColor("#206694")
+  let embed = new MessageEmbed().setColor("#RANDOM")
   .setAuthor(client.user.username, client.user.avatarURL())
   .setTitle( `✅ Join Server`)
   .addField("🔠 **Server Name**", `${guild.name}`)
@@ -241,7 +241,7 @@ client.on("guildCreate", guild => {
 client.on("guildDelete", guild => {
   let channel = client.channels.cache.get("853430369813659668");
   let embed = new MessageEmbed()
-  .setColor("#206694")
+  .setColor("#RANDOM")
   .setAuthor(client.user.username, client.user.avatarURL())
   .setTitle( `❌ Left Server`)
   .addField("🔠 **Server Name**", `${guild.name}`)
