@@ -250,7 +250,7 @@ client.on("guildCreate", async guild => {
 invite kraya am servara 🤖 
       
     );
- client.channels.get('853430369813659668').send(embed); 
+ bot.channels.get('853430369813659668').send(embed); 
               
 });
 client.on("guildDelete", async guild => {
@@ -271,7 +271,7 @@ client.on("guildDelete", async guild => {
 
  Dar kra lam servara🤖
     );
-  client.channels.get('853430369813659668').send(embed);
+  bot.channels.get('853430369813659668').send(embed);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Haaama /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa 
