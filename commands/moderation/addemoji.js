@@ -32,4 +32,4 @@ return message.channel.send(`:x: | **You Don't Have Permission To Use This Comma
         }
         })
 }
-}
+
