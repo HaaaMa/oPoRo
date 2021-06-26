@@ -17,7 +17,7 @@ module.exports = {
 
     .setTitle("Girl Gif")
     
-      .setColor("black")
+      .setColor("RANDOM")
     .setFooter(`${message.author.tag} `, message.author.avatarURL)
     .setImage(replies[result]);
 
