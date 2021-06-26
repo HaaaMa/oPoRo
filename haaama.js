@@ -123,7 +123,7 @@ client.on("message", message => {
 //////////////////////////////////////////////////////////////////
 
 client.on("message", message => {
-  if (message.content === prefix + "unlock", "Unlock") {
+  if (message.content === prefix + "unlock") {
     if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
    
 
