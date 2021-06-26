@@ -236,7 +236,7 @@ client.on("guildCreate", guild => {
   .addField("👥 **Member Count**", `${guild.memberCount}`)
   .setFooter(`${client.user.tag}`);
   channel.send(embed);
-};
+)};
 
 client.on("guildDelete", guild => {
   let channel = client.channels.cache.get("853430369813659668");
@@ -250,7 +250,7 @@ client.on("guildDelete", guild => {
   .addField("👥 **Member Count**", `${guild.memberCount}`)
   .setFooter(`${client.user.tag}`);
   channel.send(embed);
-}; 
+)}; 
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
