@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 const { Prefix } = require("../../config.js");
 
 module.exports = {
-  name: "textkurdish",
+  name: "textkurd",
   aliases: ["tk", "tkurd", "kurdt"],
   description: "Show text",
   usage: "text",
