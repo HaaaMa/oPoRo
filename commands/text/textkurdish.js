@@ -4,7 +4,7 @@ const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "textkurdish",
-  aliases: ["textKurdish"],
+  aliases: ["tk", "tkurd", "kurdt"],
   description: "Show text",
   usage: "text",
   run: async (client, message, args) => {
@@ -20,8 +20,8 @@ module.exports = {
     let result = Math.floor((Math.random() * replies.length));
 
     message.channel.send(replies[result]).then(message => {
-			message.react('🥺').then(r => {
-				message.react('🖤');
+			message.react('💔').then(r => {
+				message.react('😻');
            });
           });
       }
