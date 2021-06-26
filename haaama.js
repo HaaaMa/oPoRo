@@ -123,7 +123,7 @@ client.on("message", message => {
 //////////////////////////////////////////////////////////////////
 
 client.on("message", message => {
-  if (message.content === prefix + "unlock") {
+  if (message.content === prefix + "unlock", "Unlock") {
     if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
    
 
@@ -145,10 +145,82 @@ client.on("message", message => {
 
 
 
+client.on("message", message => {
+  if (message.content.startsWith(prefix + "listem")) {
+    let Emojis = "";
+    let EmojisAnimated = "";
+    let EmojiCount = 0;
+    let Animated = 0;
+    let OverallEmojis = 0;
+    function Emoji(id) {
+      return client.emojis.cache.get(id).toString();
+    }
+    message.guild.emojis.cache.forEach(emoji => {
+      OverallEmojis++;
+      if (emoji.animated) {
+        Animated++;
+        EmojisAnimated += Emoji(emoji.id);
+      } else {
+        EmojiCount++;
+        Emojis += Emoji(emoji.id);
+      }
+    });
+    let Embed = new Discord.MessageEmbed()
+      .setTitle(`Emojis in ${message.guild.name}.`)
+      .setDescription(
+        `**Animated [${Animated}]**:\n${EmojisAnimated}\n\n**Standard [${EmojiCount}]**:\n${Emojis}\n\n**All Emoji [${OverallEmojis}]**`
+      )
+      .setColor(`RANDOM`);
+    message.channel.send(Embed);
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Haaama /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+     ////     Token     ////
+
 client.login('ODE0NjA4NzA3NDEyMjk1Nzgw.YDgVeg.HvMJ4jRnJPfxjBa9QdmdcnN1pvE');
 const prefix = "1";
 
-
+     ///    Prefix    ///
 
 
 
