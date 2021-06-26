@@ -4,7 +4,7 @@ const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "textenglish",
-  aliases: ["textEnglish"],
+  aliases: ["te", "teng", "englisht"],
   description: "Show text",
   usage: "text",
   run: async (client, message, args) => {
