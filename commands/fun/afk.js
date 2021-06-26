@@ -34,4 +34,5 @@ module.exports = {
     });
         };
     return sendError("There is nothing playing in this server.", message.channel);
-  };
+  }
+};
