@@ -34,9 +34,9 @@ module.exports = {
 \`emoji\`
 
 <a:photooporo:854036253778247742> | **Photos**
-\`picboy\`, \`picgirl\`, \`picanime\`,
-\`picanimal\`, \`picbaby\`, \`piccouple\`,
-\`picemoji\`
+\`Pboy\`, \`Pgirl\`, \`Panime\`,
+\`Panimal\`, \`Pbaby\`, \`Pcouple\`,
+\`Pemoji\`
 
 <a:textoporo:823650640541909012> | **Texts**
 \`textkurdish\`, \`textenglish\`, \`textarabic\`
