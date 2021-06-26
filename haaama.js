@@ -223,31 +223,6 @@ client.on("message", async message => {
 
 
 
-client.on("message", msg => {
-if (msg.content.startsWith(prefix + "year")){
-    let now = new Date();
-    let next = new Date(now);
-    next.setFullYear(now.getFullYear() + 1);
-    next.setHours(0, 0, 0, 0);
-    next.setMonth(0, 1);
-    let duration = next - now;
-    let seconds = Math.floor((duration / 1000) % 60);
-    let minutes = Math.floor((duration / 1000 / 60) % 60);
-    let hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
-    let days = Math.floor(duration / (1000 * 60 * 60 * 24));
-    
-    let embed = new Discord.MessageEmbed()
-    .setAuthor("Next Year!", msg.author.displayAvatarURL())
-    .setColor("RANDOM")
-    .setDescription(`There are **${days} days**, **${hours} hours**, **${minutes} minutes** and **${seconds} seconds** until **${next.getFullYear()}**!`)
-    .setImage("")
-    .setFooter(`Or, in short, ${moment.duration(next - now).humanize()}.`)
-    msg.channel.send(embed)
-}
-})
-
-
-
 
 
 
