@@ -3,7 +3,6 @@ const { MessageEmbed } = require("discord.js");
 const { Prefix } = require("../../config.js");
 const figlet = require("figlet");
 const { promisify } = require("util");
-const figletAsync = promisify(figlet);
 const sendError = require("../util/error");
 const fs = require('fs');
 
