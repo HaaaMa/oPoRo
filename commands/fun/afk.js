@@ -8,10 +8,10 @@ const sendError = require("../util/error");
 const fs = require('fs');
 
 module.exports = {
-  name: "ascii",
-  aliases: [],
-  description: "Ascii Art!",
-  usage: "Ascii <Text>",
+  name: "afk",
+  aliases: ["Afk", "setReplay"],
+  description: "afk",
+  usage: "autoreplay",
   run: async (client, message, args) => {
 
 
@@ -34,5 +34,4 @@ module.exports = {
     });
         };
     return sendError("There is nothing playing in this server.", message.channel);
-  },
-};
+  };
