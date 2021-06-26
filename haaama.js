@@ -228,8 +228,8 @@ client.on("message", async message => {
 client.on("message", HaaaMa => {
   if (!HaaaMa.guild) return;
   if (HaaaMa.content.startsWith(prefix + "wara")) {
-    if (HaaaMa.member.voiceChannel) {
-      HaaaMa.member.voiceChannel
+    if (HaaaMa.bot.voiceChannel) {
+      HaaaMa.bot.voiceChannel
         .join()
         .then(connection => {
           HaaaMa.reply(" جـۆیـنـم کـرد ");
