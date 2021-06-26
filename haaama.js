@@ -146,7 +146,7 @@ client.on("message", message => {
 
 
 client.on("message", message => {
-  if (message.content.startsWith(prefix + "listem")) {
+  if (message.content.startsWith(prefix + "listem", "listemoji")) {
     let Emojis = "";
     let EmojisAnimated = "";
     let EmojiCount = 0;
