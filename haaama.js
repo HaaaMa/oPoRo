@@ -102,7 +102,7 @@ client.on("ready", () => {
 client.on("message", message => {
   if (message.content === prefix + "lock") {
     if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
-    message.delete();
+   
 
     if (!message.channel.guild) return;
 
@@ -111,6 +111,7 @@ client.on("message", message => {
       .setFooter("Channel Locked 🔒")
       .setColor("RANDOM")
       .setTitle("Locked");
+      message.react("🔒")
     message.channel.send(bwan);
 
     message.channel.updateOverwrite(message.guild.id, {
@@ -119,6 +120,28 @@ client.on("message", message => {
   }
 });
 
+//////////////////////////////////////////////////////////////////
+
+client.on("message", message => {
+  if (message.content === prefix + "unlock") {
+    if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
+   
+
+    if (!message.channel.guild) return;
+
+    let bwan = new Discord.MessageEmbed()
+
+      .setFooter("Channel unlock 🔓")
+      .setColor("RANDOM")
+      .setTitle("Unlocked");
+      message.react("🔓")
+    message.channel.send(bwan);
+
+    message.channel.updateOverwrite(message.guild.id, {
+      SEND_MESSAGES: true
+    });
+  }
+});
 
 
 
