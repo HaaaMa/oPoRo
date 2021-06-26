@@ -40,7 +40,8 @@ module.exports = {
 \`Pemoji\`
 
 <a:textoporo:823650640541909012> **Texts** <a:textoporo:823650640541909012>
-\`textkurdish\`, \`textenglish\`, \`textarabic\`
+\`textkurdish\` (tk) , \`textenglish\` (te) , \`textarabic\` (ta)
+\`textturkish\` (tt) , \`textpersian\` (tp)
 
 
 [invite](https://discord.com/api/oauth2/authorize?client_id=814608707412295780&permissions=8&scope=bot) - [Server](https://discord.gg/VWuQfQfjc9)
