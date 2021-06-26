@@ -16,29 +16,30 @@ module.exports = {
     .setTitle(`Help oPoRo!`)
 
     .setDescription(`
-<a:infooporo:823333203459702836> | **Info**
+>>> 
+<a:infooporo:823333203459702836> **Info** <a:infooporo:823333203459702836>
 \`help\`, \`ping\`, \`serverinfo\`,
 \`userinfo\`, \`invite\`
 
-<a:modoporo:858281897096118272> | **Moderation**
+<a:modoporo:858281897096118272> **Moderation** <a:modoporo:858281897096118272>
 \`ban\`, \`unban\`, \`kick\`,
 \`mute\`, \`unmute\`, \`clear\`
 
-<a:funnyoporo:803086992044589096> | **Funny**
+<a:funnyoporo:803086992044589096> **Funny** <a:funnyoporo:803086992044589096>
 \`ascii\`, \`avatar\`, \`dicksize\`,
 \`howgay\`, \`rate\`
 
-<a:gifoporo:854036186868088872> | **Gifs**
+<a:gifoporo:854036186868088872> **Gifs** <a:gifoporo:854036186868088872>
 \`boy\`, \`girl\`, \`anime\`,
 \`animal\`, \`baby\`, \`couple\`,
 \`emoji\`
 
-<a:photooporo:854036253778247742> | **Photos**
+<a:photooporo:854036253778247742> **Photos** <a:photooporo:854036253778247742>
 \`Pboy\`, \`Pgirl\`, \`Panime\`,
 \`Panimal\`, \`Pbaby\`, \`Pcouple\`,
 \`Pemoji\`
 
-<a:textoporo:823650640541909012> | **Texts**
+<a:textoporo:823650640541909012> **Texts** <a:textoporo:823650640541909012>
 \`textkurdish\`, \`textenglish\`, \`textarabic\`
 
 
