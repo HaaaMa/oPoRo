@@ -23,15 +23,21 @@ module.exports = {
         );
       }
    
-      channel.setRateLimitPerUser(duration);
-      let Embed = new RichEmbed()
+      message.channel.bulkDelete(args[0]).then(Message => {
+      let embed = new Discord.MessageEmbed()
         .setColor("RANDOM")
-        .setTitle(`Slowmode Set!`)
-        .addField(`Moderator`, `${message.author} (${message.author.id})`)
+        .setTitle(`slowmode set!`)
+        .addField(`Moderator`, ** `${message.author.tag} ** `)
+        .addField(`Channel`, ** `${message.channel.name} ** `)
         .addField(`Time Set`, `${duration} seconds`)
-        .setFooter(`Requested by ${message.author.username}`)
-        .setTimestamp();
-      return message.channel.send(Embed);
-    }
+        .setFooter(`slowmode ✅`)
+        
+        
+      return message.channel
+        .send(embed)
+        .then(msg => msg.delete({ timeout: 10000 }));
+    });
+
+    
   }
 };
