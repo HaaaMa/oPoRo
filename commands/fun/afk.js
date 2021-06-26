@@ -14,7 +14,10 @@ module.exports = {
   usage: "autoreplay",
   run: async (client, message, args) => {
 
-
+let Member =
+      message.mentions.members.first() ||
+      message.guild.members.cache.get(args[0]) ||
+      message.member;
 
     let afk = JSON.parse(fs.readFileSync("./afk.json", "utf8"));
        if (!afk[message.guild.id]) afk[message.guild.id] = {
