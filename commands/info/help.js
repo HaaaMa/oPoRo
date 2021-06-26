@@ -41,8 +41,8 @@ module.exports = {
 
 <a:textoporo:823650640541909012>︙**Texts**
 \`textkurd\` (tk) , \`textenglish\` (te)
-\`textarab\` (ta) , \`textturk\` (tt) , \`textpersian\` (tp)
-
+\`textarab\` (ta) , \`textturk\` (tt) 
+\`textpersian\` (tp)
 
 [invite](https://discord.com/api/oauth2/authorize?client_id=814608707412295780&permissions=8&scope=bot) - [Server](https://discord.gg/VWuQfQfjc9)
 
