@@ -24,10 +24,11 @@ module.exports = {
 <a:modoporo:858281897096118272>︙**Moderation** 
 \`ban\`, \`unban\`, \`kick\`,
 \`mute\`, \`unmute\`, \`clear\`
+\`lock\`, \`unlock\`,
 
 <a:funnyoporo:803086992044589096>︙**Funny**
 \`ascii\`, \`avatar\`, \`dicksize\`,
-\`howgay\`, \`rate\`
+\`howgay\`, \`rate\`, \`listemoji\`,
 
 <a:gifoporo:854036186868088872>︙**Gifs**
 \`boy\`, \`girl\`, \`anime\`,
