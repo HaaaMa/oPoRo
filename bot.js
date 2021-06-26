@@ -10,7 +10,7 @@ client.on("ready", async () => {
   console.log(`ready!`);
   client.user
        .setActivity(`${Prefix}help`, { type: "PLAYING" })
-       .setActivity(`Black`)
+       .setActivity(`HaaaMa`)
     .catch(error => console.log(error));
 });
 
@@ -83,4 +83,4 @@ client.on("message", async message => {
   );
 });
 
-client.login('ODM5MjY0ODA2Nzc5MDkzMDAz.YJHIQg.r9FNTDoViy_khj79z8MeBIGct6k');
+client.login('ODE0NjA4NzA3NDEyMjk1Nzgw.YDgVeg.HvMJ4jRnJPfxjBa9QdmdcnN1pvE');
