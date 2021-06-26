@@ -27,7 +27,6 @@ return message.channel.send(`:x: | **You Don't Have Permission To Use This Comma
             ).then(em => message.channel.send(em.toString() + " added!")).catch(error => {
               message.channel.send(":x: | an Error occured")
                 console.log(error)
-})
+
           
-        }
-        
+        };
