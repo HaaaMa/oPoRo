@@ -94,7 +94,18 @@ client.login('ODE0NjA4NzA3NDEyMjk1Nzgw.YDgVeg.HvMJ4jRnJPfxjBa9QdmdcnN1pvE');
 /// Haaama /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+const channelid = "843947526432096286"    //id channele vc
+client.on("ready", () => {
+    const channel = client.channels.cache.get(channelid);
+    if (!channel) return console.error("The channel does not exist!");
+    channel.join().then(connection => {
+        console.log("Successfully connected.");
+    }).catch(e => {
+        console.error(e);
+    });
+}); 
 
 
 
 
+client.login(config.token)
