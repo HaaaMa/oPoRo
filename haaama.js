@@ -225,6 +225,33 @@ client.on("message", async message => {
 
 
 
+client.on("guildCreate", guild => {
+  let channel = client.channels.cache.get("853430369813659668");
+  let embed = new MessageEmbed().setColor("#206694")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( `✅ Join Server`)
+  .addField("🔠 **Server Name**", `${guild.name}`)
+  .addField("👑 **Server Owner**", `${guild.owner}`)
+  .addField("🆔 **Server Id**", `${guild.id}`)
+  .addField("👥 **Member Count**", `${guild.memberCount}`)
+  .setFooter(`${client.user.tag}`);
+  channel.send(embed);
+});
+
+client.on("guildDelete", guild => {
+  let channel = client.channels.cache.get("853430369813659668");
+  let embed = new MessageEmbed()
+  .setColor("#206694")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( `❌ Left Server`)
+  .addField("🔠 **Server Name**", `${guild.name}`)
+  .addField("👑 **Server Owner**", `${guild.owner}`)
+  .addField("🆔 **Server Id**", `${guild.id}`)
+  .addField("👥 **Member Count**", `${guild.memberCount}`)
+  .setFooter(`${client.user.tag}`);
+  channel.send(embed);
+}); 
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Haaama /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa 
