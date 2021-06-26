@@ -108,4 +108,4 @@ client.on("ready", () => {
 
 
 
-client.login(config.token)
+client.on(config.token)
