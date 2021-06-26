@@ -19,12 +19,13 @@ module.exports = {
  
 <a:infooporo:823333203459702836>︙**Info** 
 \`help\`, \`ping\`, \`serverinfo\`,
-\`userinfo\`, \`invite\`
+\`userinfo\`, \`invite\`, \`uptime\`
+\`say\`
 
 <a:modoporo:858281897096118272>︙**Moderation** 
 \`ban\`, \`unban\`, \`kick\`,
 \`mute\`, \`unmute\`, \`clear\`
-\`lock\`, \`unlock\`,
+\`lock\`, \`unlock\`, 
 
 <a:funnyoporo:803086992044589096>︙**Funny**
 \`ascii\`, \`avatar\`, \`dicksize\`,
