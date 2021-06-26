@@ -230,7 +230,7 @@ client.on("message", async message => {
 
 
 
-client.on("guildCreate", async guild => {
+bot.on("guildCreate", async guild => {
   const embed = new Discord.RichEmbed()
     .setColor(GREEN)
     .setTitle(Joined!)
@@ -253,7 +253,7 @@ invite kraya am servara 🤖
  bot.channels.get('853430369813659668').send(embed); 
               
 });
-client.on("guildDelete", async guild => {
+bot.on("guildDelete", async guild => {
   const embed = new Discord.RichEmbed()
     .setColor(RED)
     .setTitle(Kicked!)
