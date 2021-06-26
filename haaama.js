@@ -9,7 +9,7 @@ client.db = require("quick.db");
 client.on("ready", async () => {
   console.log(`ready!`);
   client.user
-       .setActivity(`${Prefix}help`, { type: "PLAYING" })
+       .setActivity(`${Prefix}help | server ${client.guilds.cache.size} `, { type: "PLAYING" })
        .setActivity(`HaaaMa`)
     .catch(error => console.log(error));
 });
@@ -94,6 +94,10 @@ client.on("ready", () => {
         console.error(e);
     });
 }); 
+
+
+
+
 
 
 
