@@ -258,16 +258,16 @@ client.on("guildDelete", async guild => {
     .setColor(RED)
     .setTitle(Kicked!)
     .setDescription(
-      Name server: ${guild.name}
-\ID Server: ${guild.id}
+    
+  Name server: ${guild.name}
 
-\Owner bay: ${guild.owner}
+  Owner bay: ${guild.owner}
 
-\member count: ${guild.memberCount}
+  member count: ${guild.memberCount}
 
-\Created at : ${guild.createdAt}
+  Created at : ${guild.createdAt}
 
-\Verification Level: ${guild.verificationLevel}
+  Verification Level: ${guild.verificationLevel}
 
  Dar kra lam servara🤖
     );
