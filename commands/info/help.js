@@ -42,8 +42,7 @@ module.exports = {
 \`textkurdish\`, \`textenglish\`, \`textarabic\`
 
 
-[invite](https://discord.com/api/oauth2/authorize?client_id=814608707412295780&permissions=8&scope=bot)
-[Server](https://discord.gg/VWuQfQfjc9)
+[invite](https://discord.com/api/oauth2/authorize?client_id=814608707412295780&permissions=8&scope=bot) - [Server](https://discord.gg/VWuQfQfjc9)
 
 `)
     .setFooter(`${message.author.username}`)
