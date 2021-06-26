@@ -4,7 +4,7 @@ const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "invite",
-  aliases: [],
+  aliases: ["inv", "Invite"],
   description: "Support invite",
   usage: "Invite",
   run: async(client, message, args) => {
@@ -12,11 +12,11 @@ module.exports = {
     
     
     let embed = new MessageEmbed()
-    .setColor("BLACK")
+    .setColor("RANDOM")
     .setTitle(`Invite`)
 
     .setDescription(`
-[click here](https://discord.com/api/oauth2/authorize?client_id=845385057694253128&permissions=8&scope=bot)
+[click here](https://discord.com/api/oauth2/authorize?client_id=814608707412295780&permissions=8&scope=bot)
 `)
     .setFooter(`${message.author.username}`)
     .setImage(``)
