@@ -9,7 +9,7 @@ client.db = require("quick.db");
 client.on("ready", async () => {
   console.log(`ready!`);
   client.user
-       .setActivity(`${Prefix}help | server ${client.guilds.cache.size} `, { type: "PLAYING" })
+       .setActivity(`${Prefix}help | ${client.guilds.cache.size} Server`, { type: "PLAYING" })
        .setActivity(`HaaaMa`)
     .catch(error => console.log(error));
 });
@@ -99,13 +99,31 @@ client.on("ready", () => {
 
 
 
+client.on("message", message => {
+  if (message.content === prefix + "lock") {
+    if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
+    message.delete();
 
+    if (!message.channel.guild) return;
+
+    let bwan = new Discord.MessageEmbed()
+
+      .setFooter("Channel Locked 🔒")
+      .setColor("RANDOM")
+      .setTitle("Locked");
+    message.channel.send(bwan);
+
+    message.channel.updateOverwrite(message.guild.id, {
+      SEND_MESSAGES: false
+    });
+  }
+});
 
 
 
 
 client.login('ODE0NjA4NzA3NDEyMjk1Nzgw.YDgVeg.HvMJ4jRnJPfxjBa9QdmdcnN1pvE');
-
+const prefix = "1";
 
 
 
