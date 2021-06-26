@@ -1,2 +1,2 @@
 exports.Prefix = `1`;
-exports.Token = `ODM5MjY0ODA2Nzc5MDkzMDAz.YJHIQg.r9FNTDoViy_khj79z8MeBIGct6k`;
+exports.Token = `ODE0NjA4NzA3NDEyMjk1Nzgw.YDgVeg.HvMJ4jRnJPfxjBa9QdmdcnN1pvE`;
