@@ -252,7 +252,6 @@ client.on("guildDelete", guild => {
   channel.send(embed);
 }); 
 
-client.login(config.token)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Haaama /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa /// HaaaMa 
@@ -262,6 +261,8 @@ client.login(config.token)
 
 client.login('ODE0NjA4NzA3NDEyMjk1Nzgw.YDgVeg.HvMJ4jRnJPfxjBa9QdmdcnN1pvE');
 const prefix = "1";
+
+client.login(config.token)
 
      ///    Prefix    ///
 
