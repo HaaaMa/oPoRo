@@ -4,7 +4,7 @@ const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "picanime",
-  aliases: [],
+  aliases: ["panime", "Panime"],
   description: "Show Photo",
   usage: "Photo",
   run: async (client, message, args) => {
@@ -17,7 +17,7 @@ module.exports = {
 
     .setTitle("Anime Photo")
     
-      .setColor("black")
+      .setColor("RANDOM")
     .setFooter(`${message.author.tag} `, message.author.avatarURL)
     .setImage(replies[result]);
 
