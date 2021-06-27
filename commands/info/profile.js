@@ -3,17 +3,16 @@ const config = require('../../configs/config.json');
 const db = require('quick.db')
 const moment = require("moment")
 require('moment-duration-format')
-
+const { MessageEmbed } = require("discord.js");
+const { Prefix } = require("../../config.js");
 
 module.exports = {
-    config: {
-        name: 'profile',
-        description: 'Shows information about user',
-        aliases: ["whois", "userinfo"],
-        usage: '',
-        accessableby: "",
-    },
-    run: async (client, message, args) => {
+  name: "profile",
+  aliases: ["prof"],
+  description: "Prof!",
+  usage: "profile",
+  run: async (client, message, args) => {
+
         
         let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member
         let durumm;
