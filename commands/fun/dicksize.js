@@ -4,7 +4,7 @@ const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "dicksize",
-  aliases: [],
+  aliases: ["dick"],
   description: "Show Member PP Size!",
   usage: "Dicksize <Mention Member>",
   run: async (client, message, args) => {
@@ -39,7 +39,7 @@ module.exports = {
     let Result = sizes[Math.floor(Math.random() * sizes.length)];
 
     let embed = new MessageEmbed()
-      .setColor("black")
+      .setColor("BLUE")
       .setDescription(`${Member.user.username} pp Size Is\n${Result}`)
       .setFooter(`Requested by ${message.author.username}`)
       .setTimestamp();
