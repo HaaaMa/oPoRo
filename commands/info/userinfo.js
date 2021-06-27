@@ -4,7 +4,7 @@ const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "userinfo",
-  aliases: [],
+  aliases: ["user"],
   description: "Show User Information!",
   usage: "Userinfo | <Mention User>",
   run: async (client, message, args) => {
@@ -20,7 +20,7 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setTitle(member.user.username + " Information!")
-      .setColor("BLACK")
+      .setColor("RANDOM")
       .setThumbnail(member.user.displayAvatarURL())
       .addField("Full Name", member.user.tag, true)
       .addField("ID", `${member.id}`, true)
