@@ -220,51 +220,45 @@ client.on("message", async message => {
 
 
 
-client.on("message", async message => {
-  if (message.content.startsWith(prefix + "hama")) {
+client.on('message', message => {
+    let argresult = message.content.split(` `).slice(1).join(' ');
+    if (message.content.startsWith(prefix + 'setStreaming')) {
+      if (!devs.includes(message.author.id)) return message.channel.send("<@429972030092476437> only this guy can do restart the bot so don't try again :wink:.");
+      message.delete();
+      client.user.setGame(argresult, 'https://twitch.tv/DynastyShop');
 
-  if(message.author.bot) return;
-  if(!message.channel.guild) return message.reply(' Error : \` Server Command \`');
-    var invites = await message.guild.fetchInvites();
-      invites = invites.array();
-      arraySort(invites, 'uses', { reverse: true });
-      let possibleInvites = ['User Invited |  Uses '];
-      invites.forEach(i => {
-          if (i.uses === 0) { 
-              return;
-          }
-        possibleInvites.push(['\n\ ' +'<@'+ i.inviter.id +'>' + '  :  ' +   i.uses]);
-       //معلومه بسيطه يمديك تكرر العمليهه أكثر من مره
-      })
-      const embed = new Discord.RichEmbed()
-   .setColor('RANDOM')
-      .addField("Top Invites." ,`${(possibleInvites)}`)
-  
-      message.channel.send(embed)
-      }
-  }); 
+    } else if(message.content.startsWith(prefix + 'setWatching')) {
+        client.user.setActivity(argresult,{type: 'WATCHING'});
+
+      } else if(message.content.startsWith(prefix + 'setListening')) {
+        client.user.setActivity(argresult,{type: 'LISTENING'});
+
+      } else if(message.content.startsWith(prefix + 'setPlaying')) {
+        client.user.setActivity(argresult,{type: 'PLAYING'});
+
+      } else if(message.content.startsWith(prefix + 'setName')) {
+        client.user.setUsername(argresult);
+
+      } else if(message.content.startsWith(prefix + 'setAvatar')) {
+        client.user.setAvatar(argresult);
 
 
+      } else if(message.content.startsWith(prefix + 'setStatus')) {
+        if(!argresult) return message.channel.send('`online`, `DND(Do not Distrub),` `idle`, `invisible(Offline)` :notes: أختر أحد الحالات');
+        client.user.setStatus(argresult);
 
 
-client.on("message", async message => {
-  if (message.content.startsWith(prefix + "image")) {
-
-        if(!message.channel.guild) return;
- if(message.author.bot) return;
-    
-        const embed = new Discord.RichEmbed()
-
-    .setTitle(`This is  ** ${message.guild.name} **  Photo !`)
-.setAuthor(message.author.username, message.guild.iconrURL)
-  .setColor("RANDOM")
-  .setImage(message.guild.iconURL)
-  .setURL(message.guild.iconrURL)
-                  .setTimestamp()
-
- message.channel.send({embed});
     }
-}); 
+
+  });
+
+
+client.login(process.env.BOT_TOKEN);
+
+
+
+
+
 
 
 
