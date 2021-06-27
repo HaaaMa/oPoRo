@@ -1,4 +1,4 @@
-/* this file is loaded by index.html and styles the page */
+/* this file is loaded by index.html and styles the page */ 
 
 * {
   box-sizing: border-box;
@@ -16,7 +16,7 @@ h1 {
   max-width: calc(100% - 5rem);
   line-height: 1.1;
 }
-
+/* Dast Le Mada Tek dache                                                                              */
 form {
   background-color: #eee;
   display: grid;
