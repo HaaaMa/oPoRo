@@ -47,7 +47,7 @@ module.exports = {
         User.kick({ reason: `${Reason || "No Reason Provided!"}` });
       }, 2000);
       let embed = new Discord.MessageEmbed()
-        .setColor("black")
+        .setColor("RED")
         .setTitle(`Member Kicked!`)
         .addField(`Moderator`, `${message.author.tag} (${message.author.id}`)
         .addField(`Kicked Member`, `${Member.tag} (${Member.id})`)
