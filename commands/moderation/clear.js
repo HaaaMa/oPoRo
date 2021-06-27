@@ -4,7 +4,7 @@ const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "clear",
-  aliases: [],
+  aliases: ["purge"],
   description: "Clear Your Messages!",
   usage: "Clear <Message Amount>",
   run: async (client, message, args) => {
@@ -34,12 +34,12 @@ module.exports = {
 
     message.channel.bulkDelete(args[0]).then(Message => {
       let embed = new Discord.MessageEmbed()
-        .setColor("black")
+        .setColor("RANDOM")
         .setTitle(`Messages Deleted!`)
-        .addField(`Moderator`, `${message.author.tag} (${message.author.id}`)
-        .addField(`Channel`, `${message.channel.name} (${message.channel.id}`)
-        .addField(`Deleted Messages`, `${Message.size}`)
-        .addField(`Reason`, `${Reason}`)
+        .addField(` **Moderator** `, `${message.author.tag} (${message.author.id}`)
+        .addField(` **Channel** `, `${message.channel.name} (${message.channel.id}`)
+        .addField(` **Deleted Messages** `, `${Message.size}`)
+        .addField(` **Reason** `, `${Reason}`)
         .setFooter(`${message.author.username}`)
         .setTimestamp();
       return message.channel
