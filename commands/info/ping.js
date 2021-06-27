@@ -4,7 +4,7 @@ const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "ping",
-  aliases: [],
+  aliases: ["pong"],
   description: "Pong!",
   usage: "Ping",
   run: async (client, message, args) => {
