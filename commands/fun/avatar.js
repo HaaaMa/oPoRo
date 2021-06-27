@@ -4,7 +4,7 @@ const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "avatar",
-  aliases: [],
+  aliases: ["Avatar"],
   description: "Show Member Avatar!",
   usage: "Avatar | <Mention Member>",
   run: async (client, message, args) => {
