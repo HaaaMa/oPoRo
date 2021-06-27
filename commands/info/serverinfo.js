@@ -4,7 +4,7 @@ const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "serverinfo",
-  aliases: [],
+  aliases: ["infoserver"],
   description: "Show Server Information!",
   usage: "Serverinfo",
   run: async (client, message, args) => {
@@ -18,7 +18,7 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setTitle(guild.name + " Information!")
-      .setColor("BLACK")
+      .setColor("RANDOM")
       .setThumbnail(guild.iconURL())
       .addField(`Name`, guild.name, true)
       .addField(`ID`, `${guild.id}`, true)
