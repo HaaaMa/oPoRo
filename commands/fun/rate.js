@@ -4,7 +4,7 @@ const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "rate",
-  aliases: [],
+  aliases: ["Rate"],
   description: "Bot Rate Your Given Thing!",
   usage: "Rate <Text>",
   run: async (client, message, args) => {
@@ -15,7 +15,7 @@ module.exports = {
       return message.channel.send(`Please Give Me Something To Rate!`);
 
     let embed = new Discord.MessageEmbed()
-      .setColor("black")
+      .setColor("RED")
       .setTitle(`I Rate`)
       .setDescription(`${Math.floor(Math.random() * 11)}/10 To ${Content}`)
       .setFooter(`Requested by ${message.author.username}`)
