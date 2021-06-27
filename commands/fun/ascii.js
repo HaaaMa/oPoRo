@@ -7,7 +7,7 @@ const figletAsync = promisify(figlet);
 
 module.exports = {
   name: "ascii",
-  aliases: [],
+  aliases: ["asci"],
   description: "Ascii Art!",
   usage: "Ascii <Text>",
   run: async (client, message, args) => {
