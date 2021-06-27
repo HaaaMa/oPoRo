@@ -220,9 +220,9 @@ client.on("message", async message => {
 
 
 
-client.on('message' , async (message) => {
- 
-      if(message.content.startsWith(prefix + "99")) {
+client.on("message", async message => {
+  if (message.content.startsWith(prefix + "hama")) {
+
   if(message.author.bot) return;
   if(!message.channel.guild) return message.reply(' Error : \` Server Command \`');
     var invites = await message.guild.fetchInvites();
@@ -247,15 +247,17 @@ client.on('message' , async (message) => {
 
 
 
-client.on("message", message => {
+client.on("message", async message => {
+  if (message.content.startsWith(prefix + "image")) {
+
         if(!message.channel.guild) return;
  if(message.author.bot) return;
-    if(message.content === prefix + "image"){ 
+    
         const embed = new Discord.RichEmbed()
 
     .setTitle(`This is  ** ${message.guild.name} **  Photo !`)
 .setAuthor(message.author.username, message.guild.iconrURL)
-  .setColor(0x164fe3)
+  .setColor("RANDOM")
   .setImage(message.guild.iconURL)
   .setURL(message.guild.iconrURL)
                   .setTimestamp()
