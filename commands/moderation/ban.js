@@ -4,7 +4,7 @@ const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "ban",
-  aliases: [],
+  aliases: ["Ban"],
   description: "Ban A Member!",
   usage: "Ban <Mention Member>",
   run: async (client, message, args) => {
@@ -45,7 +45,7 @@ module.exports = {
         User.ban({ reason: `${Reason || "No Reason Provided!"}` });
       }, 2000);
       let embed = new Discord.MessageEmbed()
-        .setColor("black")
+        .setColor("#FF0000")
         .setTitle(`Member Banned!`)
         .addField(`Moderator`, `${message.author.tag} (${message.author.id}`)
         .addField(`Banned Member`, `${Member.tag} (${Member.id})`)
