@@ -9,7 +9,7 @@ module.exports = {
   usage: "Locked",
   run: async (client, message, args) => {
 
-   if (!message.member.hasPermission('MANAGE_SERVER', 'MANAGE_CHANNELS')) {
+   if (!message.member.hasPermission(''MANAGE_CHANNELS')) {
    return message.channel.send("You don't have enough Permissions")
    }
    message.channel.overwritePermissions([
@@ -29,7 +29,7 @@ Channel Name : <#${message.channel.id}>
 Locked By : <@${message.author.id}>
 Channel Status : Send Message
 `)
-   .setColor("#146DF6");
+   .setColor("BLACK");
    await message.channel.send(embed);
 }
 } 
