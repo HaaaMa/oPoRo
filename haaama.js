@@ -246,6 +246,54 @@ client.on("message", async message => {
 ///
 ///
 
+client.on("message", storm => {
+  if (storm.content.startsWith(prefix + "uinvites")) {
+    storm.guild.fetchInvites().then(invs => {
+      let user = storm.mentions.users.first() || storm.author;
+      let personalInvites = invs.filter(i => i.inviter.id === user.id);
+      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
+      storm.channel.send(`${user} has ${inviteCount} invites.`);
+    });
+  }
+});
+
+
+client.on("message", message => {
+  if (message.content.startsWith(prefix + "emoji")) {
+    if (message.author.bot) return;
+    var emojiid = message.content
+      .split(" ")
+      .slice(1)
+      .join(" ");
+    console.log(emojiid);
+    if (emojiid.length < "18" || emojiid.length > "18" || isNaN(emojiid))
+      return message.channel.send(`- Usage  
+${prefix}emoji <EmojiID>`);
+    else
+      message.channel.send("This is the emoji that you requested:-", {
+        files: [`https://cdn.discordapp.com/emojis/${emojiid}.png`]
+      });
+  }
+});
+/// take bne
+
+client.on("message", message => {
+  if (message.content.toLowerCase() === prefix + "roles") {
+    let roles = message.guild.roles.cache.map(r => `> ${r.name}  `).join("\n");
+    let embed = new Discord.MessageEmbed()
+      .setTitle("Server Roles")
+      .setDescription(" ```javascript\n" + roles + "``` ");
+    message.channel.send(embed);
+  }
+  if (message.content.toLowerCase() === prefix + "help roles") {
+    let roles = new Discord.MessageEmbed()
+      .setTitle(`Command: roles `)
+      .addField("Usage", `${prefix}roles`)
+      .addField("Information", "Show All Roles For Server");
+    message.channel.send(roles);
+  }
+});
+
 
 ////
 ////
