@@ -114,9 +114,7 @@ client.on("message", message => {
 
       .setFooter("Channel Locked 🔒")
       .setColor("RANDOM")
-      .setTitle("
-Channel Name, <#${message.channel.id}>
-Locked By,  <@${message.author.id}> ");
+      .setTitle("Channel Have been Lock by ${username}");
      
       message.react("🔒")
     message.channel.send(bwan);
