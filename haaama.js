@@ -241,6 +241,84 @@ client.on("message", message => {
 ////
 ////
 
+client.on("message", message => {
+  if (message.content.startsWith(prefix + "lock")) {
+    let blackjack = "created by black jack";
+    if (!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS"))
+      return message.channel.send("**Please Check Your Permissions**");
+    message.channel
+      .createOverwrite(message.guild.id, { SEND_MESSAGES: false })
+      .then(() => {
+        const embed = new Discord.MessageEmbed()
+          .setThumbnail(message.author.avatarURL())
+          .setTitle("** locked Channel :lock:**")
+          .addField("Guild name", message.guild.name)
+          .addField("Channel", `${message.channel.name}`)
+          .addField("By", `<@${message.author.id}>`, true)
+          .setColor("RANDOM");
+        return message.channel.send(embed);
+      });
+  }
+});
+client.on("message", message => {
+  if (message.content.startsWith(prefix + "unlock")) {
+    let blackjack = "created by black jack";
+    if (!message.member.hasPermission("MANAGE_CHANNELS"))
+      return message.channel.send("**Please Check Your Permission**");
+    message.channel
+      .createOverwrite(message.guild.id, { SEND_MESSAGES: true })
+      .then(() => {
+        const embed = new Discord.MessageEmbed()
+          .setThumbnail(message.author.avatarURL())
+          .setTitle("** Unlocked Channel 🔓**")
+          .addField("Guild name", message.guild.name)
+          .addField("Channel", message.channel.name)
+          .addField("By", `<@${message.author.id}>`, true)
+          .setColor("RANDOM");
+        return message.channel.send(embed);
+      });
+  }
+});
+client.on("message", message => {
+  if (message.content === prefix + "close") {
+    if (!message.channel.guild) return;
+    if (!message.member.hasPermission("MANAGE_CHANNELS"))
+      return message.reply("You Dont Have Perms `MANAGE CHANNELS` :x:");
+    message.channel.createOverwrite(message.guild.id, {
+      VIEW_CHANNEL: false
+    });
+    const embed = new Discord.MessageEmbed()
+      .setThumbnail(message.author.avatarURL())
+      .setTitle("**Channel hided**")
+      .addField("Guild name", message.guild.name)
+      .addField("Channel", message.channel.name)
+      .addField("Moderation", `<@${message.author.id}>`, true)
+      .setColor("RANDOM");
+    message.channel.send(embed).then(bj => {
+      bj.react("🔒");
+    });
+  }
+});
+client.on("message", message => {
+  if (message.content === prefix + "open") {
+    if (!message.channel.guild) return;
+    if (!message.member.hasPermission("MANAGE_CHANNELS"))
+      return message.reply("You dont have Perms `MANAGE CHANNELS`:x:");
+    message.channel.createOverwrite(message.guild.id, {
+      VIEW_CHANNEL: true
+    });
+    const embed = new Discord.MessageEmbed()
+      .setThumbnail(message.author.avatarURL())
+      .setTitle("**Channel unhided**")
+      .addField("Guild name", message.guild.name)
+      .addField("Channel", message.channel.name)
+      .addField("Moderation", `<@${message.author.id}>`, true)
+      .setColor("RANDOM");
+    message.channel.send(embed).then(bj => {
+      bj.react("🔓");
+    });
+  }
+});
 
 
 
