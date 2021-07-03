@@ -7,7 +7,7 @@ module.exports = {
   aliases: ["t", "timer"],
   description: "time take",
   usage: "timer",
-  run: async(client, message, args) => {
+  run: async(bot, client, message, args) => {
 
 let Timer = args[0];
 
