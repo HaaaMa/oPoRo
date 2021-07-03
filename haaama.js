@@ -140,17 +140,7 @@ client.on("message", message => {
       .setTitle("
 channel name: <#${message.channel.id}>
 Locked by: <@${message.author.id}>
-Channel status: Send message
-
-");
-      .setDescription(" des
-🔓 Unlocked Channel
-Channel Name : <#${message.channel.id}>
-Locked By : <@${message.author.id}>
-Channel Status : Send Message
-")
-      message.react("🔓")
-    message.channel.send(bwan);
+Channel status: Send message");
 
     message.channel.updateOverwrite(message.guild.id, {
       SEND_MESSAGES: true
