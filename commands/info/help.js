@@ -18,14 +18,15 @@ module.exports = {
     .setDescription(`
  
 <a:infooporo:823333203459702836>︙**Info** 
-\`help\`, \`ping\`, \`serverinfo\`,
+\`help\`, \`ping\`, \`Server\`,
 \`userinfo\`, \`invite\`, \`uptime\`
-\`say\`
+\`say\`, \`uinvite\`
 
 <a:modoporo:858281897096118272>︙**Moderation** 
 \`ban\`, \`unban\`, \`kick\`,
 \`mute\`, \`unmute\`, \`clear\`
 \`lock\`, \`unlock\`, \`slowmode\`
+\`nick\`, \`roles\`
 
 <a:funnyoporo:803086992044589096>︙**Funny**
 \`ascii\`, \`avatar\`, \`dicksize\`,
