@@ -206,6 +206,39 @@ client.on("message", async message => {
 });
 
 
+///
+///
+///
+///
+
+
+client.on("message", async message => {
+  if (message.content.startsWith(prefix + "nick")) {
+    let args = message.content.split(" ").slice(1);
+
+    let hama = args.slice(1).join(" ");
+
+    if (!message.member.hasPermission("MANAGE_GUILD")) {
+      return message.channel.send("pewist ba role bo anjamdane amkara");
+    }
+    if (!message.guild.me.hasPermission("MANAGE_GUILD")) {
+      return message.channel.send("rolem niya tawakw am kara bkam");
+    }
+    let haaama = message.mentions.members.first();
+    if (!haaama) return message.reply(`kasek mention bka !`);
+
+    const embed = new Discord.MessageEmbed()
+
+      .setColor("RANDOM")
+      .setDescription(
+        `Done changed nickname  ${haaama.user.username} to ${hama}`
+      );
+
+    await message.channel.send(embed);
+
+    haaama.setNickname(hama);
+  }
+});
 
 
 
