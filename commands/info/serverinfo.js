@@ -20,9 +20,9 @@ module.exports = {
       .setTitle(guild.name + " Information!")
       .setColor("RANDOM")
       .setThumbnail(guild.iconURL())
-      .addField(`Name`, guild.name, true)
-      .addField(`ID`, `${guild.id}`, true)
-      .addField(`Owner`, `${guild.owner.user.tag}`, true)
+      .addField(`⚠️| **Server Name:**`, guild.name, true)
+      .addField(`🆔| **ID SERVER:**`, `${guild.id}`, true)
+      .addField(`👑| **Owner Server:**`, `${guild.owner}`, true)
       .addField(`Roles Count`, Roles, true)
       .addField(`Emojis Count`, Emojis, true)
       .addField(`Members Count`, Members, true)
@@ -31,6 +31,8 @@ module.exports = {
       .addField(`Server Created At`, guild.createdAt.toDateString())
       .setFooter(`Requested by ${message.author.username}`)
       .setTimestamp();
+
+
 
     message.channel.send(embed);
 
