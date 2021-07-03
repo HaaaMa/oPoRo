@@ -117,8 +117,7 @@ client.on("message", message => {
       .setTitle("");
       .setDescription(`🔒 Locked Channel
 Channel Name : <#${message.channel.id}>
-Locked By : <@${message.author.id}>
-Channel Status : Send Message`)
+Locked By : <@${message.author.id}> `)
       message.react("🔒")
     message.channel.send(bwan);
 
