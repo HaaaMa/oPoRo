@@ -4,7 +4,7 @@ const { Prefix } = require("../../config.js");
 
 module.exports = {
   name: "serverinfo",
-  aliases: ["infoserver"],
+  aliases: ["infoserver", "Server", "server"],
   description: "Show Server Information!",
   usage: "Serverinfo",
   run: async (client, message, args) => {
