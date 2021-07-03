@@ -25,7 +25,7 @@ module.exports = {
 <a:modoporo:858281897096118272>︙**Moderation** 
 \`ban\`, \`unban\`, \`kick\`,
 \`mute\`, \`unmute\`, \`clear\`
-\`lock\`, \`unlock\`, 
+\`lock\`, \`unlock\`, \`slowmode\`
 
 <a:funnyoporo:803086992044589096>︙**Funny**
 \`ascii\`, \`avatar\`, \`dicksize\`,
