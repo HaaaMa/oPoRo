@@ -114,10 +114,10 @@ client.on("message", message => {
 
       .setFooter("Channel Locked 🔒")
       .setColor("RANDOM")
-      .setTitle("");
-      .setDescription(`🔒 Locked Channel
-"Channel Name", <#${message.channel.id}>
-"Locked By",  <@${message.author.id}> `)
+      .setTitle("
+Channel Name, <#${message.channel.id}>
+Locked By,  <@${message.author.id}> ");
+     
       message.react("🔒")
     message.channel.send(bwan);
 
