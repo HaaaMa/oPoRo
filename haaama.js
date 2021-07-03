@@ -246,93 +246,32 @@ client.on("message", async message => {
 ///
 ///
 
-client.on("message", message => {
-  if (!message.channel.guild) return;
-  let room = message.content
-    .split(" ")
-    .slice(1)
-    .join(" ");
-  let channel =
-    message.guild.channels.cache.find(channel => channel.name === `${room}`) ||
-    message.mentions.channels.first();
-  if (message.content.startsWith(prefix + "set zkr")) {
-    if (!message.channel.guild) return;
-    if (!message.member.hasPermission("MANAGE_GUILD"))
-      return message.channel.send(
-        "**Sorry But You Dont Have Permission** `MANAGE_GUILD`"
-      );
-    if (!room)
-      return message.channel.send(
-        "**Please Type The Name Channel Or mention**"
-      );
-    if (!channel) return message.channel.send("**Cant Find This Channel**");
-    let embed = new Discord.MessageEmbed()
-      .setAuthor(message.author.username, message.author.avatarURL())
-      .setThumbnail(message.author.avatarURL())
-      .setTitle("**✅Done Check The Zkr Code Has Been Setup**")
-      .addField("Channel:", `${room}`)
-      .addField("Server", `${message.guild.name}`)
-      .addField("Requested By:", `${message.author}`)
-      .setColor("RANDOM")
-      .setFooter(`${client.user.username}`)
+
+////
+////
+////
+////
+////
+
+client.on("message", prof => {
+  if (prof.content.startsWith(prefix + "server", "serverinfo", "Server", "infoserver")) {
+    var professor = new Discord.MessageEmbed()
+      .setAuthor(prof.guild.name)
+      .setThumbnail(prof.guild.iconURL())
+      .setTitle("**Info Server**")
+      .addField(" ⚠️| **Server Name:**", `${prof.guild.name}`)
+      .addField(" 👑| **Owner Server:**", `${prof.guild.owner}`)
+      .addField(" 🔰| **Server ID:**", `${prof.guild.id}`)
+      .addField(" ✅| **Created:**", `${prof.guild.createdAt.toLocaleString()}`)
+      .addField(" 🚦| **Members:**", `${prof.guild.memberCount}`)
+      .addField(" 🔳| **Channels:**", `${prof.guild.channels.cache.size}`)
+      .addField(" 🌐| **Region**:", `${prof.guild.region}`)
+      .addField(" **Roles:**", ` ${prof.guild.roles.cache.size}`)
+      .setFooter(`Requested | ${prof.author.tag}`, prof.author.avatarURL())
       .setTimestamp();
-    message.channel.send(embed)[message.guild.id] = {
-      channel: channel.name
-    };
-    client.writeFile("./zkr.json", JSON.stringify(client), err => {
-      if (err) console.error(err);
-    });
+    prof.channel.send(professor);
   }
-}); 
-
-
-/////
-
-client.on("message", message => {
-  var az = [
-    "**سبحان الله العلي العظيم**",
-    "**الحمد لله رب العالمين**",
-    "**لا تنسى ذكر الله **",
-    "**اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِي العظيم. **",
-    "**قل أعوذ برب ٱلفلق، من شر ما خلق، ومن شر غاسق إذا وقب، ومن شر ٱلنفثت فى ٱلعقد، ومن شر حاسد إذا حسد. **",
-    "**قل أعوذ برب ٱلناس، ملك ٱلناس، إله ٱلناس، من شر ٱلوسواس ٱلخناس، ٱلذى يوسوس فى صدور ٱلناس، من ٱلجنة وٱلناس **",
-    "** أصـبحنا وأصـبح المـلك لله والحمد لله ، لا إله إلا الله وحده لا شريك له، له المـلك وله الحمـد، وهو على كل شيء قدير ، رب أسـألـك خـير ما في هـذا اليوم وخـير ما بعـده ، وأعـوذ بك من شـر ما في هـذا اليوم وشر ما بعـده، رب أعـوذبك من الكسـل وسـوء الكـبر ، رب أعـوذ بك من عـذاب في النـار وعـذاب في القـب**",
-    "**اللهـم أنت ربـي لا إله إلا أنت ، خلقتنـي وأنا عبـدك ، وأنا علـى عهـدك ووعـدك ما استـطعـت ، أعـوذبك من شـر ما صنـعت ، أبـوء لـك بنعـمتـك علـي وأبـوء بذنـبي فاغفـر لي فإنـه لا يغـفر الذنـوب إلا أنت . **",
-    "**رضيـت بالله ربـا وبالإسلام ديـنا وبمحـمد صلى الله عليه وسلم نبيـا.  **",
-    "** اللهـم إنـي أصبـحت أشـهدك ، وأشـهد حملـة عـرشـك ، وملائكتك ، وجمـيع خلـقك ، أنـك أنـت الله لا إله إلا أنـت وحـدك لا شريك لـك ، وأن  محمـدا عبـدك ورسـولـك. **",
-    "**حسبـي الله لا إله إلا هو علـيه توكـلت وهو رب العرش العظـيم.  **",
-    "**بسـم الله الذي لا يضـر مع اسمـه شيء في الأرض ولا في السمـاء وهـو السمـيع العلـيم. **",
-    "**اللهـم بك أصـبحنا وبك أمسـينا ، وبك نحـيا وبك نمـوت وإلـيك النـشور.  **",
-    "**اللهم إني أعوذ بك من الهم والحزن، وأعوذ بك من العجز والكسل، وأعوذ بك من الجبن والبخل، وأعوذ بك من غلبة الدين، وقهر الرجال.  **",
-    "**أستغفر الله وأتوب إليه  **",
-    "**لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير.  **",
-    "** اللهم إني أسألك علما نافعا، ورزقا طيبا، وعملا متقبلا.**"
-  ];
-
-  if (message.content.startsWith(`${prefix}startzkr`)) {
-    if (!message.guild.member(message.author).hasPermission("ADMINISTATOR")) {
-      message.channel.send("**You dont Have premission`administrator` **");
-    } else {
-      setInterval(() => {
-        let azkar = az[Math.floor(Math.random() * az.length)];
-        let sendrom = message.guild.channels.cache.find(
-          channel => channel.name === [message.guild.id].channel
-        );
-        let embed = new Discord.MessageEmbed()
-          .setColor("RANDOM")
-          .setTitle("[ اذكار ]")
-          .setDescription(azkar);
-        sendrom.send(embed);
-      }, 6000);
-    }
-  }
-}); 
-
-
-
-
-
-
+});
 
 
 
