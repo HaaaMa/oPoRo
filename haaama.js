@@ -102,49 +102,8 @@ client.on("ready", () => {
 
 
 
-
-client.on("message", message => {
-  if (message.content === prefix + "lock") {
-    if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
-   
-
-    if (!message.channel.guild) return;
-
-    let bwan = new Discord.MessageEmbed()
-
-      .setFooter("Channel Locked 🔒")
-      .setColor("RANDOM")
-      .setTitle(`Can't send Message <a:emoji_21:791254445261455382> `);
-     
-      message.react("🔒")
-    message.channel.send(bwan);
-
-    message.channel.updateOverwrite(message.guild.id, {
-      SEND_MESSAGES: false
-    });
-  }
-});
-
 //////////////////////////////////////////////////////////////////
 
-client.on("message", message => {
-  if (message.content === prefix + "unlock") {
-    if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
-   
-
-    if (!message.channel.guild) return;
-
-    let bwan = new Discord.MessageEmbed()
-
-      .setFooter("Channel unlock 🔓")
-      .setColor("RANDOM")
-      .setTitle("Can send message <a:emoji_22:791254463481643019>");
-
-    message.channel.updateOverwrite(message.guild.id, {
-      SEND_MESSAGES: true
-    });
-  }
-});
 
 
 
