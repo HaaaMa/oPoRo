@@ -241,7 +241,7 @@ client.on("message", message => {
 
 ```
 client.on('message',async message => {
-  if(message.content.startsWith( prefix + "sug")) {
+  if(message.content.startsWith(PREFIX + "sug")) {
   let args = message.content.split(" ").slice(1)
  
     if(!args.length) {
