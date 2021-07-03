@@ -114,7 +114,7 @@ client.on("message", message => {
 
       .setFooter("Channel Locked 🔒")
       .setColor("RANDOM")
-      .setTitle(`Channel Have been Lock by ${user}`);
+      .setTitle(`Can't send Message <a:emoji_21:791254445261455382> `);
      
       message.react("🔒")
     message.channel.send(bwan);
@@ -138,7 +138,7 @@ client.on("message", message => {
 
       .setFooter("Channel unlock 🔓")
       .setColor("RANDOM")
-      .setTitle("Channel unlcoked 🔓");
+      .setTitle("Can send message <a:emoji_22:791254463481643019>");
 
     message.channel.updateOverwrite(message.guild.id, {
       SEND_MESSAGES: true
