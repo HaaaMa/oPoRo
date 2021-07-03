@@ -238,47 +238,48 @@ client.on("message", message => {
 ////
 ////
 ////
+
+```
+client.on('message',async message => {
+  if(message.content.startsWith( prefix + "sug")) {
+  let args = message.content.split(" ").slice(1)
+ 
+    if(!args.length) {
+      return message.channel.send("Please Give the Suggestion")
+    }
+ 
+    let channel = message.guild.channels.cache.find((x) => (x.name === "suggestion" || x.name === "suggestions"))
+ 
+    if(!channel) {
+      return message.channel.send("there is no channel with name - suggestions")
+    }
+ 
+ 
+    let embed = new Discord.MessageEmbed()
+    .setAuthor("SUGGESTION: " + message.author.tag, message.author.avatarURL())
+    .setThumbnail(message.author.avatarURL())
+    .setColor("#RANDOM")
+    .setDescription(args.join(" "))
+    .setTimestamp()
+ 
+ 
+    channel.send(embed).then(m => {
+      m.react(":white_check_mark:")
+      m.react(":x:")
+    })
+ 
+ 
+ 
+    message.channel.send("Sended Your Suggestion to  Suggestions Channel")
+ 
+  }
+})
+
+
+////
 ////
 ////
 
-client.on("message", message => {
-  if (message.content.startsWith(prefix + "lock", "Lock")) {
-    let haaama = "created by haaama";
-    if (!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS"))
-      return message.channel.send("**Please Check Your Permissions**");
-    message.channel
-      .createOverwrite(message.guild.id, { SEND_MESSAGES: false })
-      .then(() => {
-        const embed = new Discord.MessageEmbed()
-          .setThumbnail(message.author.avatarURL())
-          .setTitle("** locked Channel :lock:**")
-          .addField("Guild name", message.guild.name)
-          .addField("Channel", `${message.channel.name}`)
-          .addField("By", `<@${message.author.id}>`, true)
-          .setColor("RANDOM");
-        return message.channel.send(embed);
-      });
-  }
-});
-client.on("message", message => {
-  if (message.content.startsWith(prefix + "unlock", "Unlock")) {
-    let haaama = "created by haaama";
-    if (!message.member.hasPermission("MANAGE_CHANNELS"))
-      return message.channel.send("**Please Check Your Permission**");
-    message.channel
-      .createOverwrite(message.guild.id, { SEND_MESSAGES: true })
-      .then(() => {
-        const embed = new Discord.MessageEmbed()
-          .setThumbnail(message.author.avatarURL())
-          .setTitle("** Unlocked Channel 🔓**")
-          .addField("Guild name", message.guild.name)
-          .addField("Channel", message.channel.name)
-          .addField("unlocked By", `<@${message.author.id}>`, true)
-          .setColor("RANDOM");
-        return message.channel.send(embed);
-      });
-  }
-});
 client.on("message", message => {
   if (message.content === prefix + "hide") {
     if (!message.channel.guild) return;
@@ -322,7 +323,9 @@ client.on("message", message => {
 
 
 
-
+////
+////
+/////
 
 
 
