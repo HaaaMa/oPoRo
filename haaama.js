@@ -137,10 +137,7 @@ client.on("message", message => {
 
       .setFooter("Channel unlock 🔓")
       .setColor("RANDOM")
-      .setTitle("
-channel name: <#${message.channel.id}>
-Locked by: <@${message.author.id}>
-Channel status: Send message");
+      .setTitle("Channel unlcoked 🔓");
 
     message.channel.updateOverwrite(message.guild.id, {
       SEND_MESSAGES: true
