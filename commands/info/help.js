@@ -30,11 +30,12 @@ module.exports = {
 <a:funnyoporo:803086992044589096>︙**Funny**
 \`ascii\`, \`avatar\`, \`dicksize\`,
 \`howgay\`, \`rate\`, \`listemoji\`,
+\`se\`
 
 <a:gifoporo:854036186868088872>︙**Gifs**
 \`boy\`, \`girl\`, \`anime\`,
 \`animal\`, \`baby\`, \`couple\`,
-\`emoji\`
+\`emoji\`, 
 
 <a:photooporo:854036253778247742>︙**Photos** 
 \`Pboy\`, \`Pgirl\`, \`Panime\`,
