@@ -138,6 +138,12 @@ client.on("message", message => {
       .setFooter("Channel unlock 🔓")
       .setColor("RANDOM")
       .setTitle("Unlocked");
+      .setDescription(`
+🔓 Unlocked Channel
+Channel Name : <#${message.channel.id}>
+Locked By : <@${message.author.id}>
+Channel Status : Send Message
+`)
       message.react("🔓")
     message.channel.send(bwan);
 
