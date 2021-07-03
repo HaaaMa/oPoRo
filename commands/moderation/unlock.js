@@ -29,7 +29,7 @@ module.exports = {
 🔓 Unlocked Channel
 Channel Name : <#${message.channel.id}>
 Locked By : <@${message.author.id}>
-Channel Status : Send Message
+Channel Status : Send Message <a:emoji_22:791254463481643019>
 `)
    .setColor("BLACK");
    await message.channel.send(embed);
