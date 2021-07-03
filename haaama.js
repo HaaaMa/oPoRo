@@ -242,8 +242,8 @@ client.on("message", message => {
 ////
 
 client.on("message", message => {
-  if (message.content.startsWith(prefix + "lock")) {
-    let blackjack = "created by black jack";
+  if (message.content.startsWith(prefix + "lock", "Lock")) {
+    let haaama = "created by haaama";
     if (!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS"))
       return message.channel.send("**Please Check Your Permissions**");
     message.channel
@@ -261,8 +261,8 @@ client.on("message", message => {
   }
 });
 client.on("message", message => {
-  if (message.content.startsWith(prefix + "unlock")) {
-    let blackjack = "created by black jack";
+  if (message.content.startsWith(prefix + "unlock", "Unlock")) {
+    let haaama = "created by haaama";
     if (!message.member.hasPermission("MANAGE_CHANNELS"))
       return message.channel.send("**Please Check Your Permission**");
     message.channel
@@ -273,14 +273,14 @@ client.on("message", message => {
           .setTitle("** Unlocked Channel 🔓**")
           .addField("Guild name", message.guild.name)
           .addField("Channel", message.channel.name)
-          .addField("By", `<@${message.author.id}>`, true)
+          .addField("unlocked By", `<@${message.author.id}>`, true)
           .setColor("RANDOM");
         return message.channel.send(embed);
       });
   }
 });
 client.on("message", message => {
-  if (message.content === prefix + "close") {
+  if (message.content === prefix + "hide") {
     if (!message.channel.guild) return;
     if (!message.member.hasPermission("MANAGE_CHANNELS"))
       return message.reply("You Dont Have Perms `MANAGE CHANNELS` :x:");
@@ -300,7 +300,7 @@ client.on("message", message => {
   }
 });
 client.on("message", message => {
-  if (message.content === prefix + "open") {
+  if (message.content === prefix + "unhide") {
     if (!message.channel.guild) return;
     if (!message.member.hasPermission("MANAGE_CHANNELS"))
       return message.reply("You dont have Perms `MANAGE CHANNELS`:x:");
