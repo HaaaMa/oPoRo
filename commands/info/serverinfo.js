@@ -27,7 +27,7 @@ module.exports = {
       .addField(`Emojis Count`, Emojis, true)
       .addField(`🚦| **Members:**`, Members, true)
       .addField(`🔳| **Channels:**`, ${guild.channels.cache.size}`, true)
-      .addField(" 🌐| **Region**:", `${guild.region}`) 
+      .addField(`🌐| **Region**:**`, `${guild.region}`) 
       .addField(`🤖| **Bots Count**`, Bots, true)
       .addField(`✅| **Created:**`, guild.createdAt.toDateString())
       .setFooter(`Requested by ${message.author.username}`)
