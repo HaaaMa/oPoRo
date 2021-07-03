@@ -24,7 +24,7 @@ module.exports = {
       .addField(`🔰| **Server ID:**`, `${guild.id}`, true)
       .addField(`👑| **Owner Server:**`, `${guild.owner}`, true)
       .addField(`💮| **Roles Count**`, Roles, true)
-      .addField(`📧| **Emojis Count**`, Emojis, true)
+      .addField(`🤡| **Emojis Count**`, Emojis, true)
       .addField(`🚦| **Members:**`, Members, true)
       .addField(`🌐| **Region**:**`, `${guild.region}`) 
       .addField(`🤖| **Bots Count**`, Bots, true)
