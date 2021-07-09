@@ -7,7 +7,7 @@ module.exports = {
   aliases: ["topinv", "topinvite", "TopInvite"],
   description: "Show Server Information!",
   usage: "topinvite",
-  run: async (client, message, args) => {
+  run: async (app, client, message, args) => {
 
         message.guild.fetchInvites().then((invites) => {
             const inviteCounter = {}
@@ -40,4 +40,4 @@ module.exports = {
 
 
         })
-    }
+    
