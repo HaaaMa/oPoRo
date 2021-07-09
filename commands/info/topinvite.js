@@ -39,4 +39,4 @@ module.exports = {
              message.channel.send(replyText)
 
 }
-}
+
