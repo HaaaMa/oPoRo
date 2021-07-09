@@ -291,26 +291,7 @@ client.on("message", message => {
 ////
 /////
 
-client.on("message", message => {
-  if (message.content === prefix + "test") {
-    if (!message.channel.guild) return;
-    if (!message.member.hasPermission("MANAGE_CHANNELS"))
-      return message.reply("You dont have Perms `MANAGE CHANNELS`:x:");
-    message.channel.createOverwrite(message.guild.id, {
-      SEND_MESSAGES: false
-    });
-    const embed = new Discord.MessageEmbed()
-      .setThumbnail(message.author.avatarURL())
-      .setTitle("**Channel unhided**")
-      .addField("**Server Name**", message.guild.name)
-      .addField("**ChannelName**", message.channel.name)
-      .addField("**Moderation**", `<@${message.author.id}>`, true)
-      .setColor("RANDOM");
-    message.channel.send(embed).then(messgae => {
-      message.react("🐸");
-    });
-  }
-});
+ 
 
 
 
