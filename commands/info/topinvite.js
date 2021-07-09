@@ -7,7 +7,7 @@ module.exports = {
   aliases: ["topinv", "topinvite", "TopInvite"],
   description: "Show Server Information!",
   usage: "topinvite",
-  run: async (app, client, message, args) => {
+  run: async (app, message, args) => {
 
         message.guild.fetchInvites().then((invites) => {
             const inviteCounter = {}
@@ -38,5 +38,4 @@ module.exports = {
              }
              message.channel.send(replyText)
 
-}
 };
