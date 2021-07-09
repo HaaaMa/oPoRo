@@ -21,7 +21,8 @@ module.exports = {
 \`help\`, \`ping\`, \`Server\`,
 \`userinfo\`, \`invite\`, \`uptime\`
 \`say\`, \`uinvite\`, \`roles\`
-\`stats\`, \`topchat\`
+\`stats\`, \`topchat\`, \`listemoji\`,
+\`se <emoji>\`,
 
 <a:modoporo:858281897096118272>︙**Moderation** 
 \`ban\`, \`unban\`, \`kick\`,
@@ -31,8 +32,8 @@ module.exports = {
 
 <a:funnyoporo:803086992044589096>︙**Funny**
 \`ascii\`, \`avatar\`, \`dicksize\`,
-\`howgay\`, \`rate\`, \`listemoji\`,
-\`se <emoji>\`,
+\`howgay\`, \`rate\`, 
+\`list_mem\` - \`create_mem\`,, \`helpmem\`,
 
 <a:gifoporo:854036186868088872>︙**Gifs**
 \`boy\`, \`girl\`, \`anime\`,
