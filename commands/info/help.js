@@ -34,7 +34,8 @@ module.exports = {
 \`ascii\`, \`avatar\`, \`dicksize\`,
 \`howgay\`, \`rate\`, 
 
-> list_mem , create_mem , helpmem
+\`helpmem\`
+> \`list_mem\` - \`create_mem\`
 
 <a:gifoporo:854036186868088872>︙**Gifs**
 \`boy\`, \`girl\`, \`anime\`,
