@@ -207,7 +207,7 @@ client.on("message", async message => {
 ///
 
 client.on("message", storm => {
-  if (storm.content.startsWith(prefix + "uinvite", "ninvite")) {
+  if (storm.content.startsWith(prefix + "uinvite")) {
     storm.guild.fetchInvites().then(invs => {
       let user = storm.mentions.users.first() || storm.author;
       let personalInvites = invs.filter(i => i.inviter.id === user.id);
@@ -216,6 +216,24 @@ client.on("message", storm => {
     });
   }
 });
+
+///be connected///
+
+client.on("message", storm => {
+  if (storm.content.startsWith(prefix + "ninvite")) {
+    storm.guild.fetchInvites().then(invs => {
+      let user = storm.mentions.users.first() || storm.author;
+      let personalInvites = invs.filter(i => i.inviter.id === user.id);
+      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
+      storm.channel.send(`${user} has ${inviteCount} invites.`);
+    });
+  }
+});
+
+////
+////
+////
+////
 
 client.on("message", message => {
   if (message.content.toLowerCase() === prefix + "roles") {
@@ -282,13 +300,13 @@ client.on("message", message => {
     });
     const embed = new Discord.MessageEmbed()
       .setThumbnail(message.author.avatarURL())
-      .setTitle("**Channel hided**")
-      .addField("Guild name", message.guild.name)
-      .addField("Channel", message.channel.name)
-      .addField("Moderation", `<@${message.author.id}>`, true)
+      .setTitle("**__Channel hided__**")
+      .addField("**Server name**", message.guild.name)
+      .addField("**Channel**", message.channel.name)
+      .addField("**Moderation**", `<@${message.author.id}>`, true)
       .setColor("RANDOM");
     message.channel.send(embed).then(message => {
-      message.react("🔒");
+      message.react("😶‍🌫️");
     });
   }
 });
@@ -302,13 +320,13 @@ client.on("message", message => {
     });
     const embed = new Discord.MessageEmbed()
       .setThumbnail(message.author.avatarURL())
-      .setTitle("**Channel unhided**")
-      .addField("Guild name", message.guild.name)
-      .addField("Channel", message.channel.name)
-      .addField("Moderation", `<@${message.author.id}>`, true)
+      .setTitle("**__Channel unhided__**")
+      .addField("**Server name**", message.guild.name)
+      .addField("**Channel**", message.channel.name)
+      .addField("**Moderation**", `<@${message.author.id}>`, true)
       .setColor("RANDOM");
     message.channel.send(embed).then(messgae => {
-      message.react("🔓");
+      message.react("🤗");
     });
   }
 });
