@@ -26,12 +26,13 @@ module.exports = {
    .setThumbnail(message.author.avatarURL({dynamic: "true"}))
    .setFooter(`${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
    .setDescription(`
-🔓 Unlocked Channel
+Unlocked Channel
 Channel Name : <#${message.channel.id}>
 Locked By : <@${message.author.id}>
 Channel Status : Send Message <a:emoji_22:791254463481643019>
 `)
    .setColor("BLACK");
+   message.react("🔓")
    await message.channel.send(embed);
 }
 }
