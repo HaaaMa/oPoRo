@@ -16,14 +16,14 @@ module.exports = {
     .setTitle(`Invite`)
 
     .setDescription(`
-[click here](https://discord.com/api/oauth2/authorize?client_id=814608707412295780&permissions=8&scope=bot)    ////haaaaMa
+[click here](https://discord.com/api/oauth2/authorize?client_id=814608707412295780&permissions=8&scope=bot)    
 `)
     .setFooter(`${message.author.username}`)
     .setImage(``)
     .setTimestamp();
     message.react(`✅`)
  
-      return message.channel.send(embed);
+      return message.channel.send(embed); ///haaama
     
   }
 };
