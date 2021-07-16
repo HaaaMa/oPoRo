@@ -8,7 +8,7 @@ client.db = require("quick.db");
 client.login('ODE0NjA4NzA3NDEyMjk1Nzgw.YDgVeg.G6j6CiNgwFZYb2gPNQy5i9MaAX8');
 const prefix = "1";
 
-
+/// Token Prefix danewa ⬆️ 
 
 client.on("ready", async () => {
   console.log(`ready!`);
