@@ -19,7 +19,7 @@ module.exports = {
     
       .setColor("RANDOM")
     .setFooter(`${message.author.tag} `, message.author.avatarURL)
-    .setImage(replies[result]);
+    .setImage(replies[result]);///haaama
 
     message.channel.send(photoembed);
 
