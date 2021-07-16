@@ -5,7 +5,7 @@ const { Prefix, Token, Color } = require("./config.js");
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.db = require("quick.db");
-client.login('ODE0NjA4NzA3NDEyMjk1Nzgw.YDgVeg.G6j6CiNgwFZYb2gPNQy5i9MaAX8');
+client.login('HaaaMa / Token');
 const prefix = "1";
 
 /// Token Prefix danewa ⬆️ 
@@ -116,7 +116,7 @@ client.on("message", message => {
     let OverallEmojis = 0;
     function Emoji(id) {
       return client.emojis.cache.get(id).toString();
-    }
+    } ///HaaaMa
     message.guild.emojis.cache.forEach(emoji => {
       OverallEmojis++;
       if (emoji.animated) {
