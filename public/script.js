@@ -1,6 +1,6 @@
 // client-side js, loaded by index.html
 // run by the browser each time the page is loaded
-
+// run Us By HaaAMa Edit profishnalle
 console.log("hello world :o");
 
 // define variables that reference elements on our page
@@ -14,7 +14,7 @@ function appendNewDream(dream) {
   dreamsList.appendChild(newListItem);
 }
 
-// fetch the initial list of dreams
+// dreamer game with HaaaMa 
 fetch("/dreams")
   .then(response => response.json()) // parse the JSON from the server
   .then(dreams => {
