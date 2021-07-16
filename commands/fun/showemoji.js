@@ -19,7 +19,7 @@ module.exports = {
     if (customemoji.id) {
       const Link = `https://cdn.discordapp.com/emojis/${customemoji.id}.${
         customemoji.animated ? "gif" : "png"
-      }`;
+      }`; ///haaama
       
       const Added = new MessageEmbed()
         .setTitle("Emoji Converter")
